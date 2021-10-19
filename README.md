@@ -5,6 +5,7 @@ https://github.com/pierlui92/Shooting-Labels
 
 # Requirement 
 Softwares: 
+- Blender version 2.79b 
 - Unity 2019.4(LTS)
 - Steam 
 - SteamVR
