@@ -11,5 +11,5 @@ Softwares:
 - SteamVR
 
 Unity plugins: 
-- SteamVR (go to Windows -> Asset Store)
+- OpenVr, Window->Package Manager, select “OpenVR” in the package list and click install. Restart Unity
 # Data
