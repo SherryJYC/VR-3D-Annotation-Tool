@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Saveable
+  - TutorialCube
+  - TutorialCube1
+  - TutorialCube3
+  - TutorialCube2
+  - MenuMesh
+  - SampleSceneMesh
+  - MeshSceneEmpty
+  - MeshSceneRGB
   layers:
   - Default
   - TransparentFX
@@ -13,11 +22,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Drawable
+  - Teleportable
+  - Saveable
+  - MenuLayer
+  - Intern
   - 
   - 
   - 
@@ -40,4 +49,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sprites
+    uniqueID: 100614799
+    locked: 0
+  - name: Mesh
+    uniqueID: 4014559477
     locked: 0
