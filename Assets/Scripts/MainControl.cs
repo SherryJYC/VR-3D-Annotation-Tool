@@ -34,6 +34,12 @@ public class MainControl : MonoBehaviour
 
     }
 
+
+    void Update()
+    {
+
+    }
+
     void setMode(int mode)
     {
         _mode = mode;
@@ -52,10 +58,15 @@ public class MainControl : MonoBehaviour
 
     }
 
+    void SaveGameData()
+    {
+        //save data in the localapp folder
+    }
+
+    void ExportMesh()
+    { 
+    }
+
   
 
-    void Update()
-    {
-        
-    }
 }
