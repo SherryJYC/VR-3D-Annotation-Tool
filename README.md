@@ -13,3 +13,14 @@ Softwares:
 Unity plugins: 
 - OpenVr, Window->Package Manager, select “OpenVR” in the package list and click install. Restart Unity
 # Data
+2D3Ds Dataset area 3.
+
+# User-Study
+
+Comparison of the 3
+
+# Final App 
+
+## User-Static Labeling 
+
+## User-Dynamic Labeling
