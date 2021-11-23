@@ -7,17 +7,33 @@ using UnityEngine;
 public class MenuOperation : MonoBehaviour {
 
     public GameObject controllerLeft;
+    public GameObject menu;
+    public GameObject menuWelcome;
 
     private SteamVR_TrackedController controller;
     //private List<string> meshName = new List<string>();
     public List<String> meshName;
-    
-    
+
     // Use this for initialization
     void Start () {
         controller = controllerLeft.GetComponent<SteamVR_TrackedController>();
         meshName = MeshController.singleton.meshName;
         createFolders();
+    }
+
+    // swtich between memus
+    public static void OpenMainMenu()
+    {
+        Debug.Log("here");
+        GameObject menu;
+        GameObject menuWelcome;
+        // set welcome page to active by default
+        menuWelcome = GameObject.Find("MenuWelcome");
+        menuWelcome.SetActive(false);
+
+        // set main menu page to active by default
+        menu = GameObject.Find("MainMenu");
+        menu.SetActive(true);
     }
 
     private void createFolders()

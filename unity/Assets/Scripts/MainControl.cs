@@ -8,13 +8,18 @@ using UnityEngine.UI;
 
 public class MainControl : MonoBehaviour
 {
-    
-    
-    public GameObject controllerRight;
-    public GameObject controllerLeft;
+
+    //Public attribute to attach Prefabs
+    public GameObject prefabPaintball;
+    public GameObject prefabShootingLabelControl;
+    public GameObject prefabSprayGunControl;
+
+    //Private reference to prefab
+    private GameObject[] prefabArray = new GameObject[3];
+    private int currentMode;
 
     public static Dictionary<Color, int> categoriesFromRGB;
-    private int _mode;
+    private int mode;
 
     [System.Serializable]
     public struct label
@@ -28,26 +33,40 @@ public class MainControl : MonoBehaviour
 
     void Start()
     {
-        controllerLeft = GameObject.Find("Controller (left)");
-        controllerRight = GameObject.Find("Controller (right)");
+        prefabArray[0] = prefabShootingLabelControl;
+        prefabArray[1] = prefabPaintball;
+        prefabArray[2] = prefabSprayGunControl;
+
+        for (int index = 0; index <= prefabArray.Length; index++)
+        {
+            GameObject.Instantiate(prefabArray[index]);
+            //prefabArray[index].GetComponent<Transform>().SetParent(transform, false);
+
+            //By default the first controller of the list is left activated
+            if (index == 0)
+            {
+                currentMode = 0;
+            }
+            else
+            {
+                prefabArray[index].SetActive(false);
+            }
+        }
+
         loadGameData();
 
     }
 
-
-    void Update()
+    void setMode(int _mode)
     {
-
-    }
-
-    void setMode(int mode)
-    {
-        _mode = mode;
+        prefabArray[mode].SetActive(false);
+        prefabArray[_mode].SetActive(true);
+        mode = _mode;
     }
 
     int queryMode()
     {
-        return _mode;
+        return mode;
 
     }
 

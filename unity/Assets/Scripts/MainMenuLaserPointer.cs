@@ -33,6 +33,10 @@ public class MainMenuLaserPointer : MonoBehaviour
     public static bool Tutorial = false;
     public static bool NewSession = false;
 
+    public GameObject menu;
+    public GameObject menuWelcome;
+    public GameObject menuHelp;
+
     // Use this for initialization
     void Start()
     {
@@ -47,6 +51,11 @@ public class MainMenuLaserPointer : MonoBehaviour
         numberofsaves = directoryInfo.GetDirectories().Length;
         MeshController.singleton.meshesEmpty.SetActive(false);
         MeshController.singleton.meshesRGB.SetActive(true);
+
+        // set welcome page to active by default
+        menuWelcome.SetActive(true);
+        menu.SetActive(false);
+        menuHelp.SetActive(false);
     }
 
     // Update is called once per frame
@@ -94,7 +103,32 @@ public class MainMenuLaserPointer : MonoBehaviour
 
                     SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
                 }
+                else if (hit.collider.name == "ButtonBackWelcomeFromMain")
+                {
 
+                    menuWelcome.SetActive(true);
+                    menu.SetActive(false);
+                }
+                // Welcome page
+                else if (hit.collider.name == "ButtonEnter")
+                {
+
+                    menuWelcome.SetActive(false);
+                    menu.SetActive(true);
+                }
+                else if (hit.collider.name == "ButtonHelp")
+                {
+
+                    menuWelcome.SetActive(false);
+                    menuHelp.SetActive(true);
+                }
+                // Help page
+                else if (hit.collider.name == "ButtonBackWelcome")
+                {
+
+                    menuWelcome.SetActive(true);
+                    menuHelp.SetActive(false);
+                }
             }
         }
         else

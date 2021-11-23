@@ -29,6 +29,7 @@ public class MenuLaserPointer : MonoBehaviour {
     public static bool menuActive;
     public static bool otherMenu;
     private GameObject menu;
+    private GameObject menuWelcome;
 
     public static GameObject meshEmpty;
     public static GameObject meshRGB;
@@ -52,8 +53,14 @@ public class MenuLaserPointer : MonoBehaviour {
         controller.MenuButtonClicked += MenuButton;
         menuActive = false;
         otherMenu = false;
+
+        // set welcome page to active by default
+        menuWelcome = GameObject.Find("MenuWelcome");
+        menuWelcome.SetActive(false);
+
+        // set welcome page to active by default
         menu = GameObject.Find("MenuButton");
-        menu.SetActive(false);
+        menu.SetActive(true);
         FileBrowser.HideDialog();
 
     }
