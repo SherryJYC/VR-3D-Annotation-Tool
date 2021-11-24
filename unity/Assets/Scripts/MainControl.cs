@@ -10,16 +10,19 @@ public class MainControl : MonoBehaviour
 {
 
     //Public attribute to attach Prefabs
+    public GameObject ControllerLeft;
+    public GameObject ControllerRight;
+    public GameObject CameraRig;
     public GameObject prefabPaintball;
     public GameObject prefabShootingLabelControl;
     public GameObject prefabSprayGunControl;
 
     //Private reference to prefab
-    private GameObject[] prefabArray = new GameObject[3];
+    private GameObject[] prefabArrayLeftController = new GameObject[3];
     private int currentMode;
 
     public static Dictionary<Color, int> categoriesFromRGB;
-    private int mode;
+    private int mode = 0;
 
     [System.Serializable]
     public struct label
@@ -33,25 +36,20 @@ public class MainControl : MonoBehaviour
 
     void Start()
     {
-        prefabArray[0] = prefabShootingLabelControl;
-        prefabArray[1] = prefabPaintball;
-        prefabArray[2] = prefabSprayGunControl;
+        prefabArrayLeftController[0] = Instantiate(prefabShootingLabelControl);
+        prefabArrayLeftController[1] = Instantiate(prefabPaintball);
+        prefabArrayLeftController[2] = Instantiate(prefabSprayGunControl);
 
-        for (int index = 0; index <= prefabArray.Length; index++)
+        for (int index = 0; index < prefabArrayLeftController.Length; index++)
         {
-            GameObject.Instantiate(prefabArray[index]);
-            prefabArray[index].GetComponent<Transform>().SetParent(transform, false);
+            prefabArrayLeftController[index].transform.SetParent(CameraRig.transform, false);
+            prefabArrayLeftController[index].SetActive(false);
+            //GameObject.Instantiate(prefabArrayLeftController[index]);
+            //prefabArrayLeftController[index].GetComponent<Transform>().SetParent(ControllerRight.transform, false);
 
             //By default the first controller of the list is left activated
-            if (index == 0)
-            {
-                currentMode = 0;
-            }
-            else
-            {
-                prefabArray[index].SetActive(false);
-            }
         }
+        setMode(mode);
 
         loadGameData();
 
@@ -59,8 +57,8 @@ public class MainControl : MonoBehaviour
 
     void setMode(int _mode)
     {
-        prefabArray[mode].SetActive(false);
-        prefabArray[_mode].SetActive(true);
+        prefabArrayLeftController[mode].SetActive(false);
+        prefabArrayLeftController[_mode].SetActive(true);
         mode = _mode;
     }
 

@@ -12,7 +12,6 @@ public class Weapons : MonoBehaviour
     public static GameObject colorSelected;
     public static Color current_color;
     public LayerMask shootableMask;
-
     public float radiusOfFire;
     protected Vector3 hitPoint;
     protected RaycastHit hit;
