@@ -90,6 +90,7 @@ public class PaintballControllers : Weapons
         //Change color of the laser
         rayOfFire.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);
         targetOfFire.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);
+        muzzleTrasform.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);
     }
 
     protected override bool TriggerIsPressed()
