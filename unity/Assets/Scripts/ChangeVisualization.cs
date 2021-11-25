@@ -2,20 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ChangeVisualization : MonoBehaviour {
-
-    public GameObject controllerRight;
-
+public class ChangeVisualization : MonoBehaviour
+{
+    public GameObject controllerLeft;
     private SteamVR_TrackedController controller;
     public static GameObject meshRGB;
     public static GameObject meshEmpty;
     private static int lastscene = 1; //1 is for empty 2 is for RGB
-
     // Use this for initialization
-    void Start () {
-        controller = controllerRight.GetComponent<SteamVR_TrackedController>();
-        controller.MenuButtonClicked += VisualizeRGB;
+    void Start()
+    {
+        controller = controllerLeft.GetComponent<SteamVR_TrackedController>();
+        controller.TriggerClicked += VisualizeRGB;
         if (MainMenuLaserPointer.Tutorial)
         {
             MeshController.singleton.meshesEmpty.SetActive(false);
@@ -33,7 +31,6 @@ public class ChangeVisualization : MonoBehaviour {
             meshEmpty.SetActive(true);
         }
     }
-
     private void VisualizeRGB(object sender, ClickedEventArgs e)
     {
         if (!MenuLaserPointer.menuActive)
@@ -52,10 +49,8 @@ public class ChangeVisualization : MonoBehaviour {
             }
         }
     }
-
-    public static int  getlastscene()
+    public static int getlastscene()
     {
         return lastscene;
     }
-   
 }

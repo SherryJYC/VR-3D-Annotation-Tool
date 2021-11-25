@@ -18,7 +18,7 @@ public class MenuLaserPointer : MonoBehaviour {
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_TrackedObject trackedObjRight;
 
-    private SteamVR_TrackedController controller;
+    private SteamVR_TrackedController controllerLeftHand;
     private SteamVR_TrackedController controllerRightHand;
 
     private SteamVR_Controller.Device device;
@@ -30,6 +30,7 @@ public class MenuLaserPointer : MonoBehaviour {
     public static bool otherMenu;
     private GameObject menu;
     private GameObject menuWelcome;
+    public GameObject menuBrush;
 
     public static GameObject meshEmpty;
     public static GameObject meshRGB;
@@ -48,9 +49,11 @@ public class MenuLaserPointer : MonoBehaviour {
 
         controllerRightHand = controllerRight.GetComponent<SteamVR_TrackedController>();
         //controllerRightHand.TriggerClicked += TriggerClicked;
+        controllerRightHand.MenuButtonClicked += MenuButtonRight; // change the open/close menu function on controllerLeft to controllerRight
 
-        controller = controllerLeft.GetComponent<SteamVR_TrackedController>();
-        controller.MenuButtonClicked += MenuButton;
+        controllerLeftHand = controllerLeft.GetComponent<SteamVR_TrackedController>();
+        controllerLeftHand.MenuButtonClicked += MenuButtonLeft;
+
         menuActive = false;
         otherMenu = false;
 
@@ -63,6 +66,7 @@ public class MenuLaserPointer : MonoBehaviour {
         menu.SetActive(true);
         FileBrowser.HideDialog();
 
+        menuBrush.SetActive(false);
     }
 
     private void TriggerClicked()
@@ -101,7 +105,21 @@ public class MenuLaserPointer : MonoBehaviour {
          
     }
 
-    private void MenuButton(object sender, ClickedEventArgs e)
+        private void MenuButtonLeft(object sender, ClickedEventArgs e)
+        {
+            // switch brush
+            if (menuBrush.activeInHierarchy == true)
+        {
+            menuBrush.SetActive(false);
+        }
+        else
+        {
+            menuBrush.SetActive(true);
+        }
+
+        }
+
+        private void MenuButtonRight(object sender, ClickedEventArgs e)
     {
 
         GameObject faceHidden = GameObject.Find("faceHidden");
