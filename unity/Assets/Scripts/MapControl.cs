@@ -12,19 +12,20 @@ public class MapControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentPlayerTransform = GameObject.FindGameObjectWithTag("mainCamera").GetComponent<Transform>();
+
+        currentPlayerTransform = MainControl.PlayerCameraRig.GetComponent<Transform>();
         areaSectionList = new List<GameObject>(GameObject.FindGameObjectsWithTag("MiniMap"));
     }
 
-    void TeleportPlayerToNextRoom(Transform menuTransform )
+    public void TeleportPlayerToNextRoom(Vector3 targetPosition)
     {
-        Vector3 currentPosition = MiniMapCamera.ScreenToWorldPoint(menuTransform.position);
+        //Vector3 currentPosition = MiniMapCamera.ScreenToWorldPoint(menuTransform.position);
         GameObject bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
         
         foreach (GameObject section in areaSectionList)
         {
-            Vector3 directionToTarget = section.transform.position - currentPosition;
+            Vector3 directionToTarget = section.transform.position - targetPosition;
             float dSqrToTarget = directionToTarget.sqrMagnitude;
             if (dSqrToTarget < closestDistanceSqr)
             {
