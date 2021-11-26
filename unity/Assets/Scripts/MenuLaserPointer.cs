@@ -29,6 +29,7 @@ public class MenuLaserPointer : MonoBehaviour {
     public static bool menuActive;
     public static bool otherMenu;
     private GameObject menu;
+    private GameObject miniMapMenu;
 
     public static GameObject meshEmpty;
     public static GameObject meshRGB;
@@ -56,6 +57,7 @@ public class MenuLaserPointer : MonoBehaviour {
         menu.SetActive(false);
         FileBrowser.HideDialog();
 
+        miniMapMenu = GameObject.FindObjectOfType<MenuMiniMap>().gameObject;
     }
 
     private void TriggerClicked()
@@ -135,10 +137,16 @@ public class MenuLaserPointer : MonoBehaviour {
                     TriggerClicked();
                 }
             }
+            else if (Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, 13)) //Layer MiniMap = 13
+            {
+                ShowLaser(hit);
+                Debug.Log(miniMapMenu.GetComponent<MenuMiniMap>().TransformeCursorHitToWorldCoordinates(hit.point));
+            }
             else
             {
                 laser.SetActive(false);
             }
+
         }
         else
         {

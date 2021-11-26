@@ -169,7 +169,8 @@ MonoBehaviour:
   meshModified: []
   muzzleTrasform: {fileID: 6095512007632012065}
   TracerEffect: {fileID: 11400000, guid: b2007fe5631c7614586d24a05e074a32, type: 2}
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 1338862414193942, guid: a8fa3b04619e84d4ba84cdec57b413ef,
+    type: 3}
   targetPrefab: {fileID: 1240101790291420, guid: db8b7147da89aa245816c20c176584f1,
     type: 3}
 --- !u!64 &8723550928084398825

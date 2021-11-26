@@ -16,20 +16,14 @@ public class MenuMiniMap : MonoBehaviour
         TopCamera = MainControl.TopCameraMiniMap.GetComponent<Camera>();
         PlayerCamera = MainControl.PlayerCameraRig.GetComponent<Camera>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        // If laser pointer hit the map 
-        //cursorPositionWorldSpace = TransformeCursorHitToWorldCoordinates(RayHit);
-        //MainControl.MapControl.GetComponent<MapControl>().TeleportPlayerToNextRoom(cursorPositionWorldSpace);
-    }
 
-    Vector3 TransformeCursorHitToWorldCoordinates(Vector2 hitImageMap)
+    public Vector3 TransformeCursorHitToWorldCoordinates(Vector3 hitWorldPosition)
     {
+        Vector2 screenPoint = PlayerCamera.WorldToScreenPoint(hitWorldPosition);
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
            ImageRendererMap,
-           hitImageMap,
+           screenPoint,
            PlayerCamera,
            out localPoint
         );
@@ -40,7 +34,7 @@ public class MenuMiniMap : MonoBehaviour
         Plane plane = new Plane(Vector3.up, Vector3.zero);
         float d;
         plane.Raycast(ray, out d);
-        Vector3 hit = ray.GetPoint(d);
+        Vector3 hitPlane = ray.GetPoint(d);
         //PlayerCamera.transform.position = new Vector3(hit.x, .transform.position.y, hit.z);
 
 
@@ -48,6 +42,6 @@ public class MenuMiniMap : MonoBehaviour
         //localPoint.x = (localPoint.x / rect.width) + map.rectTransform.pivot.x;
         //localPoint.y = (localPoint.y / rect.height) + map.rectTransform.pivot.y;
 
-        return hit; 
+        return hitPlane; 
     }
 }

@@ -13,7 +13,7 @@ public class MapControl : MonoBehaviour
     void Start()
     {
 
-        currentPlayerTransform = MainControl.PlayerCameraRig.GetComponent<Transform>();
+        currentPlayerTransform = MainControl.PlayerCameraRig.transform;
         areaSectionList = new List<GameObject>(GameObject.FindGameObjectsWithTag("MiniMap"));
     }
 
