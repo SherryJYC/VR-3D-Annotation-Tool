@@ -38,7 +38,6 @@ public class LoadColorsConfiguration : MonoBehaviour {
 
     void Awake()
     {
-
         pathCategoriesFile = GetPath();
         recordMissingToTheNextUnit = new List<int>();
         categoriesFromRGB = new Dictionary<Color,int>();

@@ -3,7 +3,11 @@ guid: 62c421faf5193b7419c877e4dccadc93
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - meshesRGB: {fileID: 1445750218698387085, guid: 031ec1d217046774fabdcc95d07b20cc,
+      type: 3}
+  - meshesEmpty: {fileID: 5100834469568051821, guid: 00d0e3cb78cb9014da7553dd2dd07c99,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

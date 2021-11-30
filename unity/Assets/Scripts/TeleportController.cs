@@ -100,7 +100,7 @@ public class TeleportController : MonoBehaviour {
         cameraRigTransform.position = hitPoint + difference; // Change the camera rig position to where the the teleport reticle was. Also add the difference so the new virtual room position is relative to the player position, allowing the player's new position to be exactly where they pointed. (see illustration)
     }
 
-    private bool PadIsPressing()
+    public bool PadIsPressing()
     {
         return device.GetPress(SteamVR_Controller.ButtonMask.Touchpad);
     }

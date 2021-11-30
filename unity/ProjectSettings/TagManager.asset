@@ -13,6 +13,7 @@ TagManager:
   - SampleSceneMesh
   - MeshSceneEmpty
   - MeshSceneRGB
+  - MiniMapCamera
   layers:
   - Default
   - TransparentFX

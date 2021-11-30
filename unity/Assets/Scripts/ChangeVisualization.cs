@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ChangeVisualization : MonoBehaviour {
 
-    public GameObject controllerRight;
+    public GameObject controllerLeft;
 
     private SteamVR_TrackedController controller;
     public static GameObject meshRGB;
@@ -14,7 +14,7 @@ public class ChangeVisualization : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        controller = controllerRight.GetComponent<SteamVR_TrackedController>();
+        controller = controllerLeft.GetComponent<SteamVR_TrackedController>();
         controller.MenuButtonClicked += VisualizeRGB;
         if (MainMenuLaserPointer.Tutorial)
         {

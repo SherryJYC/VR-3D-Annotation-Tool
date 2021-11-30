@@ -1,21 +1,14 @@
-﻿using SimpleFileBrowser;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-
-public class MenuLaserPointer : MonoBehaviour {
-
-
-    public GameObject controllerLeft;
+public class PanelController : MonoBehaviour
+{
     public GameObject controllerRight;
     public LayerMask menuMask; // Mask to filter out areas where menu button 
     public GameObject laserPrefab; // The laser prefab
 
     private GameObject laser; // A reference to the spawned laser
-    private SteamVR_TrackedObject trackedObj;
     private SteamVR_TrackedObject trackedObjRight;
 
     private SteamVR_TrackedController controller;
@@ -28,41 +21,32 @@ public class MenuLaserPointer : MonoBehaviour {
     private Vector3 hitPoint; // Point where the raycast hits
     public static bool menuActive;
     public static bool otherMenu;
-    private GameObject menu;
+    public GameObject menu;
     private GameObject miniMapMenu;
 
-    public static GameObject meshEmpty;
-    public static GameObject meshRGB;
-
     // Use this for initialization
-    void Start () {
-         //= ChangeVisualization.meshEmpty; // GameObject.Find("LoadMeshFromScript");
+    void Start()
+    {
+        //= ChangeVisualization.meshEmpty; // GameObject.Find("LoadMeshFromScript");
         //meshRGB = ChangeVisualization.meshRGB;  //GameObject.Find("LoadMeshRGBFromScript");
         laser = Instantiate(laserPrefab);
         laserTransform = laser.transform;
-        trackedObj = controllerLeft.GetComponent<SteamVR_TrackedObject>();
         trackedObjRight = controllerRight.GetComponent<SteamVR_TrackedObject>();
-
-        device = SteamVR_Controller.Input((int)trackedObj.index);
         deviceRight = SteamVR_Controller.Input((int)trackedObjRight.index);
-
         controllerRightHand = controllerRight.GetComponent<SteamVR_TrackedController>();
         //controllerRightHand.TriggerClicked += TriggerClicked;
-
-        controller = controllerLeft.GetComponent<SteamVR_TrackedController>();
-        controller.MenuButtonClicked += MenuButton;
         menuActive = false;
         otherMenu = false;
-        menu = GameObject.Find("MenuButton");
         menu.SetActive(false);
-        FileBrowser.HideDialog();
+
+        controllerRightHand.MenuButtonClicked += MenuButton;
 
         //miniMapMenu = GameObject.FindObjectOfType<MenuMiniMap>().gameObject;
     }
 
     private void TriggerClicked()
     {
-        
+
         RaycastHit hit;
 
         // Send out a raycast from the controller
@@ -72,10 +56,10 @@ public class MenuLaserPointer : MonoBehaviour {
             GameObject buttonMenu = GameObject.Find(hit.transform.name);
             //Debug.Log(buttonMenu.name);
 
-           
+
             menuActive = false;
             menu.SetActive(false);
-            MenuController.OpenMenu(buttonMenu.name,hit,otherMenu);
+            MenuController.OpenMenu(buttonMenu.name, hit, otherMenu);
 
             otherMenu = true;
             ShowLaser(hit);
@@ -83,7 +67,7 @@ public class MenuLaserPointer : MonoBehaviour {
         }
         else if ((Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask)) && otherMenu)
         {
-            
+
             menuActive = true;
             menu.SetActive(true);
             MenuController.OpenMenu(hit.transform.name, hit, otherMenu);
@@ -93,41 +77,38 @@ public class MenuLaserPointer : MonoBehaviour {
         {
             laser.SetActive(false);
         }
-         
+
     }
 
     private void MenuButton(object sender, ClickedEventArgs e)
     {
-
+        Camera playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         GameObject faceHidden = GameObject.Find("faceHidden");
         if (faceHidden == null)
         {
             if (menuActive == false && otherMenu == false)
-            { 
-                if(ChangeVisualization.getlastscene() == 1) ChangeVisualization.meshEmpty.SetActive(false);
-                if(ChangeVisualization.getlastscene() == 2) ChangeVisualization.meshRGB.SetActive(false);
+            {
+                playerCamera.cullingMask = ~(1 << LayerMask.NameToLayer("Drawable"));
                 menuActive = true;
                 menu.SetActive(true);
             }
             else
             {
+                playerCamera.cullingMask = -1;
                 menuActive = false;
                 menu.SetActive(false);
                 laser.SetActive(false);
-                if(ChangeVisualization.getlastscene() == 1) ChangeVisualization.meshEmpty.SetActive(true);
-                if(ChangeVisualization.getlastscene() == 2) ChangeVisualization.meshRGB.SetActive(true);
-                
             }
         }
     }
 
-// Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-       
+
         if (menuActive == true || otherMenu == true)
         {
-            
+
             RaycastHit hit;
             if (Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask))
             {
@@ -150,10 +131,10 @@ public class MenuLaserPointer : MonoBehaviour {
         }
         else
         {
-           
+
             laser.SetActive(false);
         }
-        
+
     }
 
     private void ShowLaser(RaycastHit hit)

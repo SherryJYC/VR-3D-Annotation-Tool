@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZEffects;
 
-public class PaintballControllers : Weapons
+public class PaintballController : Weapons
 {
     public EffectTracer TracerEffect;
     public GameObject laserPrefab; // The laser prefab
@@ -24,6 +24,7 @@ public class PaintballControllers : Weapons
         rayOfFire.transform.parent = transform;
         fireTransform = rayOfFire.transform;
 
+        //TODO: Tune these parameters later on
         radiusOfFire = 1f;
         factorOfScale = 0.001f;
     }
@@ -84,9 +85,9 @@ public class PaintballControllers : Weapons
 
         targetOfFire.SetActive(true);
         targetOfFire.transform.position = target.point;
-        //targetOfFire.transform.LookAt(trackedObj.transform.position); // Rotate laser facing the hit point
         targetOfFire.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target.normal);
         targetOfFire.transform.localScale = new Vector3(0.01f * radiusOfFire, 0.01f * radiusOfFire, targetOfFire.transform.localScale.z);
+
         //Change color of the laser
         rayOfFire.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);
         targetOfFire.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);
@@ -98,5 +99,6 @@ public class PaintballControllers : Weapons
         // Single shot weapon.
         return device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger);
     }
+
 
 }
