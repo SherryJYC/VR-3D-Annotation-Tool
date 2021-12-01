@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: SprayPaintGun0
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SprayGun
+    second: {fileID: 2100000, guid: 0318c59c6aec1704fae8e58da60e08a6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
