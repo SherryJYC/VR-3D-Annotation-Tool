@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-public class MeshController : MonoBehaviour
+public class MeshControllerStatic : MonoBehaviour
 {
 
    
@@ -18,7 +18,7 @@ public class MeshController : MonoBehaviour
     
     protected int numberOfChuncks;
     public static Dictionary<string, int[]> faceLabel;
-    public static MeshController singleton = null;
+    public static MeshControllerStatic singleton = null;
     public List<string> meshName = new List<string>();
     //public MeshModified meshesModified;
 
@@ -26,11 +26,11 @@ public class MeshController : MonoBehaviour
     public void load(string empty_dir, string rgb_dir)
 
     {
-        if (MeshController.singleton == null)
+        if (MeshControllerStatic.singleton == null)
         {
             emptyPrefabs_dir = empty_dir;
             RGBPrefabs_dir = rgb_dir;
-             singleton = this;
+            singleton = this;
             meshesEmpty = GameObject.Find("MeshesEmpty");
             meshesRGB = GameObject.Find("MeshesRGB");
             faceLabel = new Dictionary<string, int[]>();

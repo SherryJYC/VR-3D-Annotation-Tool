@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
     [RequireComponent(typeof(MeshController))]
 
-public class MainControl : MonoBehaviour
+public class MainControlStatic : MonoBehaviour
 {
 
     //Public attribute to attach Prefabs
@@ -18,7 +18,6 @@ public class MainControl : MonoBehaviour
     public GameObject ControllerRight;
     public GameObject CameraRig;
     public GameObject prefabPaintball;
-    public GameObject prefabShootingLabelControl;
     public GameObject prefabSprayGunControl;
 
     public GameObject Meshes;
@@ -32,7 +31,7 @@ public class MainControl : MonoBehaviour
     public float transform_rate=0.05f;
     private string emptyPrefabs_dir;
     private string RGBPrefabs_dir;
-    MeshController meshcontroller;
+    MeshControllerStatic meshcontroller;
 
 
 
@@ -71,7 +70,7 @@ public class MainControl : MonoBehaviour
     void Awake()
     {
         loadGameData();
-        meshcontroller = GetComponent<MeshController>();
+        meshcontroller = GetComponent<MeshControllerStatic>();
         meshcontroller.load(emptyPrefabs_dir, RGBPrefabs_dir);
         setMode(mode);
     }

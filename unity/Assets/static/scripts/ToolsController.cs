@@ -169,7 +169,7 @@ public class ToolsController : Weapons
 
     private void ShowLaserTarget(RaycastHit target)
     {
-        float rate = GameObject.Find("ControlManager").GetComponent<MainControl>().TransformRate();
+        float rate = GameObject.Find("ControlManager").GetComponent<MainControlStatic>().TransformRate();
 
         rayOfFire.SetActive(true); //Show the laser
         fireTransform.position = Vector3.Lerp(trackedObj.transform.position, target.point, .5f); // Move laser to the middle between the controller and the position the raycast hit

@@ -43,7 +43,7 @@ public class MeshControl : MonoBehaviour
     }
     private void Awake()
     {
-        mesh_scale =new Vector3(1f,1f,1f)*GameObject.Find("ControlManager").GetComponent<MainControl>().TransformRate();
+        mesh_scale =new Vector3(1f,1f,1f)*GameObject.Find("ControlManager").GetComponent<MainControlStatic>().TransformRate();
     }
 
     private GameObject FindObject(GameObject parent, string name)
