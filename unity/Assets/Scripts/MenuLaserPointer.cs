@@ -53,7 +53,8 @@ public class MenuLaserPointer : MonoBehaviour {
         controller.MenuButtonClicked += MenuButton;
         menuActive = false;
         otherMenu = false;
-        menu = GameObject.Find("MenuButton");
+        menu = GameObject.Find("MenuMiniMap");
+        //menu = GameObject.Find("MenuButton");
         menu.SetActive(false);
         FileBrowser.HideDialog();
 

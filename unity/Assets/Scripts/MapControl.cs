@@ -12,8 +12,7 @@ public class MapControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        currentPlayerTransform = MainControl.PlayerCameraRig.transform;
+        currentPlayerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
         areaSectionList = new List<GameObject>(GameObject.FindGameObjectsWithTag("MiniMap"));
     }
 

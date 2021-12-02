@@ -4,17 +4,45 @@ using UnityEngine;
 
 public class MenuMiniMap : MonoBehaviour
 {
-    public GameObject LaserCursor;
-    public GameObject PanelMap;
+    public GameObject laserPrefab;
+    private GameObject laser; // A reference to the spawned laser
     public RectTransform ImageRendererMap;
+    public LayerMask menuMask; // Mask to filter out areas where menu button 
+    public GameObject controllerRight;
+    private SteamVR_TrackedObject trackedObjRight;
 
     private Camera TopCamera;
     private Camera PlayerCamera;
-    private Vector3 cursorPositionWorldSpace;  
-    void Start()
+    private Vector3 cursorPositionWorldSpace;
+    private Transform laserTransform; // The transform component of the laser for ease of use
+    private Vector3 hitPoint; // Point where the raycast hits
+    void Awake()
     {
-        TopCamera = MainControl.TopCameraMiniMap.GetComponent<Camera>();
-        PlayerCamera = MainControl.PlayerCameraRig.GetComponent<Camera>();
+        TopCamera = GameObject.FindGameObjectWithTag("MiniMapCamera").GetComponent<Camera>();
+        PlayerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        GameObject controllerRight =  GameObject.Find("Controller (right)");
+        trackedObjRight = controllerRight.GetComponent<SteamVR_TrackedObject>();
+        laser = Instantiate(laserPrefab);
+        laser.transform.parent = transform;
+        laserTransform = laser.transform;
+
+    }
+
+    void Update()
+    {
+        RaycastHit hit;
+        Debug.Log(Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 1000, menuMask));
+        Debug.Log(hit.point);
+        if (Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 1000, menuMask)) //Layer MiniMap = 13
+        {
+            ShowLaser(hit);
+            Debug.Log(gameObject.GetComponent<MenuMiniMap>().TransformeCursorHitToWorldCoordinates(hit.point));
+        }
+        else
+        {
+            laser.SetActive(false);
+        }
+
     }
 
     public Vector3 TransformeCursorHitToWorldCoordinates(Vector3 hitWorldPosition)
@@ -44,4 +72,50 @@ public class MenuMiniMap : MonoBehaviour
 
         return hitPlane; 
     }
+
+    private void ShowLaser(RaycastHit hit)
+    {
+        laser.SetActive(true); //Show the laser
+
+        laserTransform.position = Vector3.Lerp(trackedObjRight.transform.position, hit.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
+        laserTransform.LookAt(hit.point); // Rotate laser facing the hit point
+        laserTransform.localScale = new Vector3(laserTransform.localScale.x, laserTransform.localScale.y,
+            hit.distance); // Scale laser so it fits exactly between the controller & the hit point
+    }
+
+    //private void TriggerClicked()
+    //{
+
+    //    RaycastHit hit;
+
+    //    // Send out a raycast from the controller
+    //    if ((Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask)) && menuActive)
+    //    {
+    //        hitPoint = hit.point;
+    //        GameObject buttonMenu = GameObject.Find(hit.transform.name);
+    //        //Debug.Log(buttonMenu.name);
+
+
+    //        menuActive = false;
+    //        menu.SetActive(false);
+    //        MenuController.OpenMenu(buttonMenu.name, hit, otherMenu);
+
+    //        otherMenu = true;
+    //        ShowLaser(hit);
+
+    //    }
+    //    else if ((Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask)) && otherMenu)
+    //    {
+
+    //        menuActive = true;
+    //        menu.SetActive(true);
+    //        MenuController.OpenMenu(hit.transform.name, hit, otherMenu);
+    //        otherMenu = false;
+    //    }
+    //    else
+    //    {
+    //        laser.SetActive(false);
+    //    }
+
+    //}
 }
