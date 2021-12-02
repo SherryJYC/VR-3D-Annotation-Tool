@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RectTransform))]
-public class VRButton : MonoBehaviour
+public class HomeDynamicButton : MonoBehaviour
 {
-    public Vector3 roomPosition;
-    private Transform playerCameraTransform;
+
     private BoxCollider boxCollider;
+    public Button myButton;
     private RectTransform rectTransform;
-    private Button locationButton; 
-    private Text buttonText;
-    
+
 
     private void OnEnable()
     {
         ValidateCollider();
-        playerCameraTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        buttonText = GetComponentInChildren<Text>();
-        locationButton = GetComponent<Button>();
-        locationButton.onClick.AddListener(OnClick);
+        myButton.onClick.AddListener(OnClick);
 
     }
 
@@ -31,7 +27,13 @@ public class VRButton : MonoBehaviour
 
     void OnClick()
     {
-        playerCameraTransform.position = roomPosition;
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "MiniMapScene")
+        {
+            Debug.Log("MiniMapScene OK");
+            SceneManager.LoadScene("UserDynamicScene", LoadSceneMode.Single);
+
+        }
     }
     private void ValidateCollider()
     {

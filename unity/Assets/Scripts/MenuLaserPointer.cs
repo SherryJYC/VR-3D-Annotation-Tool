@@ -141,7 +141,6 @@ public class MenuLaserPointer : MonoBehaviour {
             else if (Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, 13)) //Layer MiniMap = 13
             {
                 ShowLaser(hit);
-                Debug.Log(miniMapMenu.GetComponent<MenuMiniMap>().TransformeCursorHitToWorldCoordinates(hit.point));
             }
             else
             {
