@@ -32,3 +32,11 @@ Comparison of the 3
 ## User-Static Labeling 
 
 ## User-Dynamic Labeling
+-  Controller guidance
+
+Left controller            |          Right controller   
+:-------------------------:|:-------------------------:
+<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-left.png" alt="drawing" height="300" width="500"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-right.png" alt="drawing" height="300" width="500"/> 
+
+## Demo results
+
