@@ -1,7 +1,5 @@
 Course project for Mixed Reality Lab @ ETH Zurich 2021.
 # VR-3D-Annotation-Tool
-This git repository was used as the ground foundation of our project
-https://github.com/pierlui92/Shooting-Labels
 
 # Requirement 
 Softwares: 
@@ -12,6 +10,7 @@ Softwares:
 
 Unity plugins: 
 - OpenVr, Window->Package Manager, select “OpenVR” in the package list and click install. Restart Unity
+
 # Data
 2D3Ds Dataset area 3.
 
@@ -39,4 +38,9 @@ Left controller            |          Right controller
 <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-left.png" alt="drawing" height="300" width="500"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-right.png" alt="drawing" height="300" width="500"/> 
 
 ## Demo results
+
+## Acknowledgement
+This git repository was used as the ground foundation of our project
+https://github.com/pierlui92/Shooting-Labels
+
 
