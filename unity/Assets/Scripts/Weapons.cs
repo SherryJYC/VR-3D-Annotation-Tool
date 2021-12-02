@@ -28,7 +28,7 @@ public class Weapons : MonoBehaviour
         trackedObj = controllerRight.GetComponent<SteamVR_TrackedObject>();
         device = SteamVR_Controller.Input((int)trackedObj.index);
         meshModified = MeshController.singleton.meshName;
-        factorOfScale = 0.001f;
+        factorOfScale = 0.01f;
         colorSelected = gameObject.transform.Find("ColorSelected").Find("ImageColorSelected").gameObject;
     }
 

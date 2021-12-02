@@ -276,7 +276,6 @@ public class IP_VR_RadialMenu : MonoBehaviour
 
     void ChangeColorSelectedWeaponCanvas(int i)
     {
-       
         GunController.colorSelected.GetComponent<Image>().color = images[i].color;
         LaserGunController.colorSelected.GetComponent<Image>().color = images[i].color;
         MachineGunController.colorSelected.GetComponent<Image>().color = images[i].color;
@@ -297,6 +296,7 @@ public class IP_VR_RadialMenu : MonoBehaviour
         {
             m_DebugText.text = aString;
         }
+        PaintballController.labelText.text = aString;
     }
     #endregion
 }

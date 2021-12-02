@@ -1,11 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeRadiusOfFire : MonoBehaviour
 {
     public GameObject ControllerLeft;
     private float initialRadius;
+    private float maxRadius = 20.0f; 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +19,13 @@ public class ChangeRadiusOfFire : MonoBehaviour
 
     private void ChangeBallSize(object sender, ClickedEventArgs e)
     {
-        if (Weapons.radiusOfFire > initialRadius + 5)
+        if (Weapons.radiusOfFire > maxRadius)
         {
             Weapons.radiusOfFire = initialRadius;
         }
         else
         {
-            Weapons.radiusOfFire += 1;
+            Weapons.radiusOfFire += 10;
         }
     }
 }

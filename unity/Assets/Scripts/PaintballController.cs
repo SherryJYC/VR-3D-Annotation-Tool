@@ -6,6 +6,8 @@ using EZEffects;
 
 public class PaintballController : Weapons
 {
+    public GameObject LabelText;
+    public static TextMesh labelText;
     public EffectTracer TracerEffect;
     public GameObject laserPrefab; // The laser prefab
     public GameObject targetPrefab;
@@ -27,6 +29,7 @@ public class PaintballController : Weapons
         //TODO: Tune these parameters later on
         radiusOfFire = 1f;
         factorOfScale = 0.001f;
+        labelText = LabelText.GetComponent<TextMesh>();
     }
 
     // Update is called once per frame
@@ -36,16 +39,16 @@ public class PaintballController : Weapons
         if (Physics.Raycast(trackedObj.transform.position, transform.forward, out costantRay, distanceOfShoot, shootableMask))
         {
             ShowLaserTarget(costantRay);
-            if (TriggerIsPressed())
-            {
-                Animation();
-                Fire();
-            }
         }
         else
         {
             rayOfFire.SetActive(false);
             targetOfFire.SetActive(false);
+        }
+        if (TriggerIsPressed())
+        {
+            Animation();
+            Fire();
         }
     }
 
@@ -77,16 +80,21 @@ public class PaintballController : Weapons
 
     private void ShowLaserTarget(RaycastHit target)
     {
+        int brushSize = 1;
+        if (radiusOfFire >= 10)
+        {
+           brushSize += (int)radiusOfFire / 10;
+        }
         rayOfFire.SetActive(true); //Show the laser
         fireTransform.position = Vector3.Lerp(muzzleTrasform.transform.position, target.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
         fireTransform.LookAt(target.point); // Rotate laser facing the hit point
-        fireTransform.localScale = new Vector3(0.0F + radiusOfFire * 0.001F, 0.0F + radiusOfFire * 0.001F,
+        fireTransform.localScale = new Vector3(0.0F + brushSize * 0.001F, 0.0F + brushSize * 0.001F,
             target.distance);
 
         targetOfFire.SetActive(true);
         targetOfFire.transform.position = target.point;
         targetOfFire.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target.normal);
-        targetOfFire.transform.localScale = new Vector3(0.01f * radiusOfFire, 0.01f * radiusOfFire, targetOfFire.transform.localScale.z);
+        targetOfFire.transform.localScale = new Vector3(0.01f * brushSize, 0.01f * brushSize, targetOfFire.transform.localScale.z);
 
         //Change color of the laser
         rayOfFire.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);

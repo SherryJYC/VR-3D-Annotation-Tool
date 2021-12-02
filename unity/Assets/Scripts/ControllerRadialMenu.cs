@@ -34,14 +34,15 @@ public class ControllerRadialMenu : MonoBehaviour {
     {
         if (controller.padPressed)
         {
-           
+
             int numRadialMenu = LoadColorsConfiguration.radialMenuNames.Length;
             for(int i = 0; i < numRadialMenu; i++)
             {
+                
                 GameObject radialMenu = FindObject(gameObject, LoadColorsConfiguration.radialMenuNames[i]);
                 if (radialMenu.activeSelf)
                 {
-
+                    PaintballController.labelText.text = LoadColorsConfiguration.radialMenuNames[i];
                     radialMenu.GetComponent<IP_VR_RadialMenu>().triggered = false;                 
                     radialMenuHandler[i].menuOpen = !radialMenuHandler[i].menuOpen;
                     radialMenu.SetActive(false);
@@ -97,7 +98,8 @@ public class ControllerRadialMenu : MonoBehaviour {
 
  
     // Update is called once per frame
-    void Update () {
+    void Update () 
+    {
 		
 	}
 }
