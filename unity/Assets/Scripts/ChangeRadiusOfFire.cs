@@ -8,7 +8,8 @@ public class ChangeRadiusOfFire : MonoBehaviour
 {
     public GameObject ControllerLeft;
     private float initialRadius;
-    private float maxRadius = 20.0f; 
+    private float incrementFactor = 5;
+    private float maxRadius = 10.0f; 
    
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class ChangeRadiusOfFire : MonoBehaviour
         }
         else
         {
-            Weapons.radiusOfFire += 10;
+            Weapons.radiusOfFire += incrementFactor;
         }
     }
 }

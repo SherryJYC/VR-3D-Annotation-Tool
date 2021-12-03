@@ -135,6 +135,7 @@ public class Weapons : MonoBehaviour
             colors[v2] = col;
 
             mesh.colors = colors;
+            Debug.Log(radiusOfFire);
         }
 
     }

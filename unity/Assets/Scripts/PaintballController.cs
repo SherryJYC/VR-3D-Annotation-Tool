@@ -71,7 +71,8 @@ public class PaintballController : Weapons
 
             if (meshCollider != null || meshCollider.sharedMesh != null)
             {
-                ColorMesh(highPoly, hit, current_color, meshHits, false);
+                ChangeFactorOfScale(highPoly);
+                ColorMesh(highPoly, hit, current_color, meshHits, radiusOfFire > 1);
                 SaveColorTemporary(meshHits);
             }
 
@@ -81,9 +82,9 @@ public class PaintballController : Weapons
     private void ShowLaserTarget(RaycastHit target)
     {
         int brushSize = 1;
-        if (radiusOfFire >= 10)
+        if (radiusOfFire >= 5)
         {
-           brushSize += (int)radiusOfFire / 10;
+           brushSize += (int)radiusOfFire / 5;
         }
         rayOfFire.SetActive(true); //Show the laser
         fireTransform.position = Vector3.Lerp(muzzleTrasform.transform.position, target.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
