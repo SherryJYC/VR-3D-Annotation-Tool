@@ -7,14 +7,14 @@ public class MenuMiniMap : MonoBehaviour
     public GameObject LeftController;
     private Vector3 offset;
     private GameObject playerCamera;
-    float damp = 5.0f; // we can change the slerp velocity here
+    float damp = 4.0f; // we can change the slerp velocity here
     
 
     void Awake()
     {
-        LeftController = GameObject.Find("Controller (left)");
+        //LeftController = GameObject.Find("Controller (left)");
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        offset = new Vector3(0.0f,0.6f,0.6f);
+        offset = new Vector3(0.0f,0.6f,0.4f);
     }
 
     void Update()
