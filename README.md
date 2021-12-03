@@ -35,9 +35,14 @@ Google Drive:
 
 Left controller            |          Right controller   
 :-------------------------:|:-------------------------:
-<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-left.png" alt="drawing" height="300" width="500"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-right.png" alt="drawing" height="300" width="500"/> 
+<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-left.png" alt="drawing" height="300" width="550"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-right.png" alt="drawing" height="300" width="550"/> 
 
 ## User-Static Labeling 
+-  Controller guidance
+
+Left controller            |          Right controller   
+:-------------------------:|:-------------------------:
+<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-static_left.png" alt="drawing" height="300" width="550"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-static_right.png" alt="drawing" height="300" width="550"/> 
 
 > for a user study to compare these two versions, please check out [link to user study report (NOT YET)]()
 
