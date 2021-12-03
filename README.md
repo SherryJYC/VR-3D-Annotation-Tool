@@ -1,9 +1,14 @@
-Course project for Mixed Reality Lab @ ETH Zurich 2021.
 # VR-3D-Annotation-Tool
-This git repository was used as the ground foundation of our project
-https://github.com/pierlui92/Shooting-Labels
+
+This is the project for Mixed Reality Lab @ ETH Zurich 2021, aiming to develop a 3D labelling tool supprted by VR device.
+
+# Demo
+> insert video later
 
 # Requirement 
+Hardwares:
+- HTC Vive Pro
+
 Softwares: 
 - Blender version 2.79b 
 - Unity 2018.4(LTS)
@@ -12,6 +17,7 @@ Softwares:
 
 Unity plugins: 
 - OpenVr, Window->Package Manager, select “OpenVR” in the package list and click install. Restart Unity
+
 # Data
 2D3Ds Dataset area 3.
 
@@ -22,13 +28,22 @@ Google Drive:
 - Open unity and the scene TestRoom2d3ds
 - Click on the GameObject Meshe and update Meshe RGB and Meshe Empty accordingly with the Prefab in VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs\RGBMeshes and VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs\EmptyMeshes  
 
+# 2 Versions of Labeling tools
 
-# User-Study
+## User-Dynamic Labeling
+-  Controller guidance
 
-Comparison of the 3
-
-# Final App 
+Left controller            |          Right controller   
+:-------------------------:|:-------------------------:
+<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-left.png" alt="drawing" height="300" width="500"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-right.png" alt="drawing" height="300" width="500"/> 
 
 ## User-Static Labeling 
 
-## User-Dynamic Labeling
+> for a user study to compare these two versions, please check out [link to user study report (NOT YET)]()
+
+
+## Acknowledgement
+This [git repository](https://github.com/pierlui92/Shooting-Labels) was used as the ground foundation of our project
+
+
+
