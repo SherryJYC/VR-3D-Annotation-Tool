@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ToolsController : Weapons
 {
 
-
+    public float adjust_rate = 0.1f;
     public GameObject PowerText;
 
-    private TextMesh powerText; 
+    private TextMesh powerText;
     public GameObject laserPrefab; // The laser prefab
     public GameObject targetPrefab;
 
@@ -28,8 +29,7 @@ public class ToolsController : Weapons
     private float deltaY = 0F;
 
     public int mode;// 1 for spraygun, 0 for airbrush
-
-  
+   
 
 
 
@@ -39,6 +39,7 @@ public class ToolsController : Weapons
     void Start()
     {
         Initialize();
+
         powerText = PowerText.GetComponent<TextMesh>();
         targetOfFire = Instantiate(targetPrefab);
         targetOfFire.transform.parent = transform;
@@ -52,17 +53,31 @@ public class ToolsController : Weapons
         padScrolling = Vector2.zero;
     }
 
+    void ToolOnEnable()
+        {
+        colorSelected = gameObject.transform.Find("ColorSelected").Find("ImageColorSelected").gameObject;
+
+        GameObject.FindWithTag("ColorRadialMenu").transform.localScale = gameObject.transform.Find("RadialMenu_pose").localScale;
+        GameObject.FindWithTag("ColorRadialMenu").transform.SetParent(gameObject.transform.Find("RadialMenu_pose"));
+        GameObject.FindWithTag("ColorRadialMenu").transform.localPosition = new Vector3(0, 0, 0);
+        GameObject.FindWithTag("ColorRadialMenu").transform.localEulerAngles = new Vector3(0, 0, 0);
+
+    }
+    void ToolOnDisable()
+    {
+       GameObject.FindWithTag("ColorRadialMenu").transform.SetParent(GameObject.Find("Controller (right)").transform);
+    }
+
     // Update is called once per frame
     void Update()
     {
-
         ModifiyRadius();
-
         RaycastHit costantRay;
         
         if (Physics.Raycast(trackedObj.transform.position, transform.forward, out costantRay, distanceOfShoot, shootableMask))
         {
-           
+            Renderer fire_render = rayOfFire.GetComponent<Renderer>();
+            fire_render.material.SetColor("_Color", current_color);
             ShowLaserTarget(costantRay);
             if (TriggerIsPressed())
             {
@@ -85,8 +100,7 @@ public class ToolsController : Weapons
         {
             {
                 hitPoint = hit.point;
-                Renderer fire_render = rayOfFire.GetComponent<Renderer>();
-                fire_render.material.SetColor("_Color", current_color);
+
                 MeshCollider meshCollider = hit.collider as MeshCollider;
                 GameObject meshHits;
                 meshHits = GameObject.Find(hit.collider.name);
@@ -169,7 +183,7 @@ public class ToolsController : Weapons
 
     private void ShowLaserTarget(RaycastHit target)
     {
-        float rate = GameObject.Find("ControlManager").GetComponent<MainControlStatic>().TransformRate();
+        float rate = GameObject.Find("ControlManager").GetComponent<MainControl>().TransformRate();
 
         rayOfFire.SetActive(true); //Show the laser
         fireTransform.position = Vector3.Lerp(trackedObj.transform.position, target.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
@@ -182,7 +196,7 @@ public class ToolsController : Weapons
             targetOfFire.GetComponent<SpriteRenderer>().color = current_color;
             targetOfFire.transform.position = target.point;
             targetOfFire.transform.LookAt(trackedObj.transform.position); // Rotate laser facing the hit point
-            targetOfFire.transform.localScale = new Vector3(0.01f * radiusOfFire* rate, 0.01f * radiusOfFire * rate, targetOfFire.transform.localScale.z);
+            targetOfFire.transform.localScale = new Vector3(adjust_rate * radiusOfFire* rate, adjust_rate * radiusOfFire * rate , targetOfFire.transform.localScale.z);
         }else
         {
             targetOfFire.SetActive(false);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-public class MeshController : MonoBehaviour
+public class MeshController_ : MonoBehaviour
 {
 
     private bool pointcloud = true;
@@ -14,7 +14,7 @@ public class MeshController : MonoBehaviour
 
     protected int numberOfChuncks;
     public static Dictionary<string, int[]> faceLabel;
-    public static MeshController singleton = null;
+    public static MeshController_ singleton = null;
     public List<string> meshName = new List<string>();
     //public MeshModified meshesModified;
 
@@ -23,7 +23,7 @@ public class MeshController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         LoadUserConfiguration();
-        if (MeshController.singleton == null)
+        if (MeshController_.singleton == null)
         {
             singleton = this;
             meshesEmpty = GameObject.Find("MeshesEmpty");

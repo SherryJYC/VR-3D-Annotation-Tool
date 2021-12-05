@@ -169,13 +169,13 @@ public class IP_VR_RadialMenu : MonoBehaviour
     void HandlePadTouched(object sender, ClickedEventArgs e)
     {
         isTouching = true;
-        HandleDebugText("Touched Pad");
+       HandleDebugText("Touched Pad");
     }
 
     void HandlePadUnTouched(object sender, ClickedEventArgs e)
     {
         isTouching = false;
-        HandleDebugText("Un Touched Pad");
+       HandleDebugText("Un Touched Pad");
         
           
             
@@ -211,7 +211,7 @@ public class IP_VR_RadialMenu : MonoBehaviour
     void HandlePadUnClicked(object sender, ClickedEventArgs e)
     {
         isTouching = false;
-        HandleDebugText("Un Clicked Pad");
+       HandleDebugText("Un Clicked Pad");
 
         menuOpen = !menuOpen;
         HandleAnimator();
@@ -296,7 +296,8 @@ public class IP_VR_RadialMenu : MonoBehaviour
         {
             m_DebugText.text = aString;
         }
-        PaintballController.labelText.text = aString;
+        if(GameObject.Find("ControlManager") == null) { 
+        PaintballController.labelText.text = aString;}
     }
     #endregion
 }

@@ -31,7 +31,8 @@ public class MainMenuLaserPointer : MonoBehaviour
     private SteamVR_Controller.Device deviceRight;
 
     public static bool Tutorial = false;
-    public static bool NewSession = false;
+    //public static bool NewSession = false;
+    public static bool NewSession = true;
 
     // Use this for initialization
     void Start()

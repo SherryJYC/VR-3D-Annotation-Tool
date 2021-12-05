@@ -230,6 +230,7 @@ public class LoadColorsConfiguration : MonoBehaviour {
     {
         radialMenuPrefab = AssetDatabase.LoadAssetAtPath("Assets/ExternalAssets/Radial_Menu/Prefabs/RadialMenu_Canvas" + sizeOfMenu + "Button.prefab", typeof(GameObject));
         radialMenuInstantiated[indexOfRadialMenu] = (GameObject)Instantiate(radialMenuPrefab, gameObject.transform);
+        radialMenuInstantiated[indexOfRadialMenu].tag = "ColorRadialMenu";
         radialMenuInstantiated[indexOfRadialMenu].GetComponent<IP_VR_RadialMenu>().controller = gameObject.GetComponent<SteamVR_TrackedController>();
         recordMissingToTheNextUnit.Add(sizeOfMenu - records);
     }

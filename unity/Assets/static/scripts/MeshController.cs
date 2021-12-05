@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-public class MeshControllerStatic : MonoBehaviour
+public class MeshController : MonoBehaviour
 {
 
-   
+    private bool  pointcloud=false;
     public GameObject meshesRGB, meshesEmpty;
 
     protected string[] emptyNameFiles;
@@ -14,19 +14,50 @@ public class MeshControllerStatic : MonoBehaviour
 
     private string emptyPrefabs_dir;
     private string RGBPrefabs_dir;
+   
 
-    
     protected int numberOfChuncks;
     public static Dictionary<string, int[]> faceLabel;
-    public static MeshControllerStatic singleton = null;
+    public static MeshController singleton = null;
     public List<string> meshName = new List<string>();
     //public MeshModified meshesModified;
 
 
+    void Awake()
+    {
+        print("Debug--------------------");
+        if (GameObject.Find("ControlManager") == null || GameObject.Find("ControlManager").GetComponent<MainControl>().query_mode() == 0)
+        {
+            print("Debug");
+            DontDestroyOnLoad(this.gameObject);
+            LoadUserConfiguration();
+            if (MeshController.singleton == null)
+            {
+                RGBPrefabs_dir = "/Resources/Prefabs/RGBMeshes/";
+                emptyPrefabs_dir = "Prefabs/EmptyMeshes/";
+                singleton = this;
+                meshesEmpty = GameObject.Find("MeshesEmpty");
+                meshesRGB = GameObject.Find("MeshesRGB");
+                faceLabel = new Dictionary<string, int[]>();
+
+                InstatiatePrefabs();
+                InstatiatePrefabs(true);
+                if (pointcloud)
+                {
+                    GameObject.Find("MeshesRGB").transform.eulerAngles = new Vector3(0, 180, 0);
+                }
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
     public void load(string empty_dir, string rgb_dir)
 
     {
-        if (MeshControllerStatic.singleton == null)
+        if (MeshController.singleton == null)
         {
             emptyPrefabs_dir = empty_dir;
             RGBPrefabs_dir = rgb_dir;
@@ -73,7 +104,7 @@ public class MeshControllerStatic : MonoBehaviour
                 string nameFile = rgbNameFiles[i].Substring(Application.dataPath.Length + "Resources".Length + 2);
                 nameFile = nameFile.Split('.')[0];
                 //string nameFile = "static/mesh/rgb/refine";
-                print(nameFile);
+               
                 UnityEngine.Object pPrefab = Resources.Load(nameFile);
                 LoadPrefab(i, pPrefab, true);
                
@@ -127,8 +158,27 @@ public class MeshControllerStatic : MonoBehaviour
         string[] nameFiles = Directory.GetFiles(Application.dataPath + s, "*.prefab");
         return nameFiles;
     }
+    private void LoadUserConfiguration()
+    {
+        System.IO.StreamReader file = new System.IO.StreamReader(Application.dataPath + "/Resources/config.txt");
+        string line;
+        int found = 0;
 
-   
-    
+        while ((line = file.ReadLine()) != null)
+        {
+            found = line.IndexOf(", ");
+            if (!string.Equals("#", line.Substring(0, 1)))
+            {
+                if (string.Equals("pointcloud", line.Substring(0, found)))
+                {
+                    this.pointcloud = bool.Parse(line.Substring(found + 2, line.Length - found - 2));
+                }
+            }
+        }
+
+        file.Close();
+    }
+
+
 }
 

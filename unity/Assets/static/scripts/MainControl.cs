@@ -8,9 +8,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-    [RequireComponent(typeof(MeshController))]
+[RequireComponent(typeof(MeshController))]
 
-public class MainControlStatic : MonoBehaviour
+public class MainControl : MonoBehaviour
 {
 
     //Public attribute to attach Prefabs
@@ -28,15 +28,33 @@ public class MainControlStatic : MonoBehaviour
 
     public static Dictionary<Color, int> categoriesFromRGB;
     public int mode = 1;
-    public float transform_rate=0.05f;
+    public float transform_rate = 0.05f;
     private string emptyPrefabs_dir;
     private string RGBPrefabs_dir;
-    MeshControllerStatic meshcontroller;
+    MeshController meshcontroller;
 
 
 
     [System.Serializable]
-   
+    public class controller_state
+    {
+        private SteamVR_TrackedController controller;
+
+
+        public controller_state(GameObject Controller)
+        {
+            controller = Controller.GetComponent<SteamVR_TrackedController>();
+        }
+
+        public bool triggerPressed() { return controller.triggerPressed; }
+        public bool steamPressed() { return controller.steamPressed; }
+        public bool menuPressed() { return controller.menuPressed; }
+        public bool padPressed() { return controller.padPressed; }
+        public bool padTouched() { return controller.padTouched; }
+        public bool gripped() { return controller.gripped; }
+
+    }
+    [System.Serializable]
     public struct label
     {
         public int ID;
@@ -45,9 +63,17 @@ public class MainControlStatic : MonoBehaviour
     }
 
     public static label[] labellist;
+    public controller_state left_controller_state;
+    public controller_state right_controller_state;
+    
+    
+
 
     void Start()
-    {   /*
+    {
+        left_controller_state = new controller_state(ControllerLeft);
+        right_controller_state = new controller_state(ControllerRight);
+        /* left_controller_state = new controller_state(ControllerLeft)
         prefabArrayLeftController[0] = Instantiate(prefabShootingLabelControl);
         prefabArrayLeftController[1] = Instantiate(prefabPaintball);
         prefabArrayLeftController[2] = Instantiate(prefabSprayGunControl);
@@ -70,7 +96,7 @@ public class MainControlStatic : MonoBehaviour
     void Awake()
     {
         loadGameData();
-        meshcontroller = GetComponent<MeshControllerStatic>();
+        meshcontroller = GetComponent<MeshController>();
         meshcontroller.load(emptyPrefabs_dir, RGBPrefabs_dir);
         setMode(mode);
     }
@@ -81,7 +107,18 @@ public class MainControlStatic : MonoBehaviour
     }
     public float TransformRate() //overload
     {
-        return transform_rate;
+        return transform_rate* controller_left_rescale;
+    }
+    public int query_mode()
+    {
+        return mode;
+    }
+    public float controller_left_rescale=1f;
+
+    public void controller_rescale(float rescale)
+    {
+        print(rescale);
+        controller_left_rescale = rescale;
     }
 
     void setMode(int _mode)

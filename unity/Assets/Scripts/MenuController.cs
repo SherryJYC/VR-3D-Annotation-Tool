@@ -20,8 +20,9 @@ public class MenuController{
             {
                 ChangeVisualization.meshEmpty.SetActive(true);
                 ChangeVisualization.meshRGB.SetActive(false);
-                FileBrowser.SingleClickMode = true;
-                FileBrowser.ShowSaveDialog(null, null, false, Application.dataPath + "/Data/Saves/", "Save", "Save");
+                MenuOperation.SaveColorFile();
+                //FileBrowser.SingleClickMode = true;
+                //FileBrowser.ShowSaveDialog(null, null, false, Application.dataPath + "/Data/Saves/", "Save", "Save");
             }
             else if (ButtonName == "ButtonLoad")
             {
@@ -32,8 +33,9 @@ public class MenuController{
             {
                 ChangeVisualization.meshEmpty.SetActive(true);
                 ChangeVisualization.meshRGB.SetActive(false);
-                FileBrowser.SingleClickMode = true;
-                FileBrowser.ShowSaveDialog(null, null, false, Application.dataPath + "/Data/Exported/", "Export", "Export");
+                MenuOperation.ExportPLY();
+                //FileBrowser.SingleClickMode = true;
+                //FileBrowser.ShowSaveDialog(null, null, false, Application.dataPath + "/Data/Exported/", "Export", "Export");
             }
             else if (ButtonName == "ButtonMenu")
             {

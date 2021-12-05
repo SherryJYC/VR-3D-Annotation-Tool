@@ -15,6 +15,7 @@ TagManager:
   - MeshSceneRGB
   - MiniMapCamera
   - MiniMap
+  - ColorRadialMenu
   layers:
   - Default
   - TransparentFX

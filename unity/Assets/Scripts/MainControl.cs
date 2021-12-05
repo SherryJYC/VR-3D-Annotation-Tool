@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainControl : MonoBehaviour
+public class MainControl_ : MonoBehaviour
 {
 
     //Public attribute to attach Prefabs
