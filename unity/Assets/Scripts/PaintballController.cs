@@ -42,7 +42,7 @@ public class PaintballController : Weapons
         if (Physics.Raycast(trackedObj.transform.position, transform.forward, out costantRay, distanceOfShoot, shootableMask))
         {
             ShowLaserTarget(costantRay);
-            HighlightMeshTarget(costantRay, Color.cyan, 2);
+            HighlightMeshTarget(costantRay, Color.cyan, 0);
         }
         else
         {

@@ -26,7 +26,7 @@ public class MenuOperation : MonoBehaviour {
             UnityEditor.AssetDatabase.CreateFolder("Assets", "Data");
 
         if (!Directory.Exists(Application.dataPath + "/Data/Exported"))
-            UnityEditor.AssetDatabase.CreateFolder("Assets", "Exported/");
+            UnityEditor.AssetDatabase.CreateFolder("Assets/Data", "Exported");
 
         if (!Directory.Exists(Application.dataPath + "/Data/Saves"))
             UnityEditor.AssetDatabase.CreateFolder("Assets/Data", "Saves");

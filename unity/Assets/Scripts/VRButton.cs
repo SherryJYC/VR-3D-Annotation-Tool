@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class VRButton : MonoBehaviour
 {
-    public Transform mapTransform;
+    public Vector3 roomPosition;
     private Transform playerCameraTransform;
     private BoxCollider boxCollider;
     private RectTransform rectTransform;
@@ -31,7 +31,7 @@ public class VRButton : MonoBehaviour
 
     void OnClick()
     {
-        playerCameraTransform.position = mapTransform.position;
+        playerCameraTransform.position = roomPosition;
     }
     private void ValidateCollider()
     {
