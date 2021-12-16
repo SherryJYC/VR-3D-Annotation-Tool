@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 18018312}
   - component: {fileID: 18018311}
   - component: {fileID: 18018310}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonHomeDynamic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ RectTransform:
   m_Children:
   - {fileID: 1589553441}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 55730318}
   - component: {fileID: 55730320}
   - component: {fileID: 55730319}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,166 +333,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55730317}
   m_CullTransparentMesh: 0
---- !u!43 &70387470
-Mesh:
+--- !u!21 &73698539
+Material:
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 9
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimized: 0
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &76176676
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +378,7 @@ GameObject:
   - component: {fileID: 76176677}
   - component: {fileID: 76176679}
   - component: {fileID: 76176678}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +458,7 @@ GameObject:
   - component: {fileID: 88658630}
   - component: {fileID: 88658629}
   - component: {fileID: 88658628}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonCorridorGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +478,7 @@ RectTransform:
   m_Children:
   - {fileID: 76176677}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -759,7 +633,7 @@ GameObject:
   - component: {fileID: 103286056}
   - component: {fileID: 103286055}
   - component: {fileID: 103286054}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124782049}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: HallButtonsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +863,7 @@ RectTransform:
   - {fileID: 210761223}
   - {fileID: 2019284383}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1400,7 +1274,7 @@ GameObject:
   - component: {fileID: 190209282}
   - component: {fileID: 190209281}
   - component: {fileID: 190209280}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,7 +1416,7 @@ GameObject:
   - component: {fileID: 210761226}
   - component: {fileID: 210761225}
   - component: {fileID: 210761224}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1789,7 +1663,7 @@ GameObject:
   - component: {fileID: 230608299}
   - component: {fileID: 230608298}
   - component: {fileID: 230608297}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoomGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,7 +1683,7 @@ RectTransform:
   m_Children:
   - {fileID: 291919110}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1961,7 +1835,7 @@ GameObject:
   - component: {fileID: 231651878}
   - component: {fileID: 231651880}
   - component: {fileID: 231651879}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2036,7 +1910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238096507}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: MeshesEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2068,7 +1942,7 @@ GameObject:
   - component: {fileID: 276024921}
   - component: {fileID: 276024923}
   - component: {fileID: 276024922}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2148,7 +2022,7 @@ GameObject:
   - component: {fileID: 276499095}
   - component: {fileID: 276499094}
   - component: {fileID: 276499093}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2323,7 +2197,7 @@ GameObject:
   - component: {fileID: 289707347}
   - component: {fileID: 289707349}
   - component: {fileID: 289707348}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2400,7 +2274,7 @@ GameObject:
   - component: {fileID: 291919110}
   - component: {fileID: 291919112}
   - component: {fileID: 291919111}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2477,7 +2351,7 @@ GameObject:
   - component: {fileID: 363745793}
   - component: {fileID: 363745795}
   - component: {fileID: 363745794}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2557,7 +2431,7 @@ GameObject:
   - component: {fileID: 378034328}
   - component: {fileID: 378034327}
   - component: {fileID: 378034326}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonCorridor3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2699,7 +2573,7 @@ GameObject:
   - component: {fileID: 388053713}
   - component: {fileID: 388053712}
   - component: {fileID: 388053711}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonCorridor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3067,13 +2941,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441226209}
-  - component: {fileID: 441226210}
   - component: {fileID: 441226207}
   - component: {fileID: 441226206}
   - component: {fileID: 441226205}
   - component: {fileID: 441226204}
   - component: {fileID: 441226201}
-  - component: {fileID: 441226199}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -3081,18 +2953,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &441226199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441226198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f84833e66366a84c9909af9da4ff3bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &441226200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +2970,7 @@ GameObject:
   - component: {fileID: 441226208}
   - component: {fileID: 441226202}
   - component: {fileID: 441226203}
+  - component: {fileID: 441226213}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -3244,25 +3105,6 @@ Transform:
   m_Father: {fileID: 900876431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &441226210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441226198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e8a839a7c5b7e4580c59e305fb5f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  color: {r: 0.990566, g: 0.092774406, b: 0.014017418, a: 0}
-  thickness: 0.002
-  holder: {fileID: 0}
-  pointer: {fileID: 0}
-  addRigidBody: 0
-  reference: {fileID: 0}
 --- !u!114 &441226211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3290,6 +3132,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerLeft: {fileID: 441226200}
   meshName: []
+--- !u!114 &441226213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441226200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79886712c4bfe4f991a18cc995c020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MiniMapPanel: {fileID: 1173054744}
+  LeftController: {fileID: 441226200}
 --- !u!114 &441226214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3442,7 +3298,7 @@ GameObject:
   - component: {fileID: 447457327}
   - component: {fileID: 447457329}
   - component: {fileID: 447457328}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: MiniMapContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3460,13 +3316,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 18018309}
   - {fileID: 2037248844}
   - {fileID: 1928756722}
   - {fileID: 124782049}
   - {fileID: 230608296}
   - {fileID: 1425627847}
   - {fileID: 88658627}
+  - {fileID: 18018309}
   m_Father: {fileID: 1872248364}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3707,7 +3563,7 @@ GameObject:
   - component: {fileID: 500334274}
   - component: {fileID: 500334273}
   - component: {fileID: 500334272}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3844,7 +3700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 502893916}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: MeshesRGB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3879,7 +3735,7 @@ GameObject:
   - component: {fileID: 503493597}
   - component: {fileID: 503493596}
   - component: {fileID: 503493595}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4170,7 +4026,7 @@ GameObject:
   - component: {fileID: 545389985}
   - component: {fileID: 545389987}
   - component: {fileID: 545389986}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4250,7 +4106,7 @@ GameObject:
   - component: {fileID: 575337692}
   - component: {fileID: 575337691}
   - component: {fileID: 575337690}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4489,7 +4345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 604798834}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Meshes
   m_TagString: MenuMesh
   m_Icon: {fileID: 0}
@@ -4598,7 +4454,7 @@ GameObject:
   - component: {fileID: 666572294}
   - component: {fileID: 666572293}
   - component: {fileID: 666572292}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4854,7 +4710,7 @@ GameObject:
   - component: {fileID: 688907139}
   - component: {fileID: 688907141}
   - component: {fileID: 688907140}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5853,7 +5709,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900876426}
-  m_Mesh: {fileID: 70387470}
+  m_Mesh: {fileID: 1060776923}
 --- !u!23 &900876429
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5871,7 +5727,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2039780251}
+  - {fileID: 73698539}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5938,7 +5794,7 @@ GameObject:
   - component: {fileID: 901622102}
   - component: {fileID: 901622101}
   - component: {fileID: 901622100}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6077,7 +5933,7 @@ GameObject:
   - component: {fileID: 917289699}
   - component: {fileID: 917289701}
   - component: {fileID: 917289700}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6461,7 +6317,7 @@ GameObject:
   - component: {fileID: 1045330499}
   - component: {fileID: 1045330501}
   - component: {fileID: 1045330500}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6527,6 +6383,166 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045330498}
   m_CullTransparentMesh: 0
+--- !u!43 &1060776923
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1085402906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6687,7 +6703,7 @@ GameObject:
   - component: {fileID: 1091728653}
   - component: {fileID: 1091728655}
   - component: {fileID: 1091728654}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6767,7 +6783,7 @@ GameObject:
   - component: {fileID: 1143254212}
   - component: {fileID: 1143254211}
   - component: {fileID: 1143254210}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonCorridor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7024,27 +7040,13 @@ GameObject:
   - component: {fileID: 1173054748}
   - component: {fileID: 1173054747}
   - component: {fileID: 1173054746}
-  - component: {fileID: 1173054745}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: MenuMiniMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1173054745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173054744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc7ba54b3fbf2346aa37793664c04a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftController: {fileID: 441226200}
 --- !u!114 &1173054746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7426,7 +7428,7 @@ GameObject:
   - component: {fileID: 1217172775}
   - component: {fileID: 1217172774}
   - component: {fileID: 1217172773}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7774,6 +7776,9 @@ MonoBehaviour:
     type: 3}
   targetPrefab: {fileID: 1240101790291420, guid: db8b7147da89aa245816c20c176584f1,
     type: 3}
+  MiniMapMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!114 &1239338299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8189,7 +8194,7 @@ GameObject:
   - component: {fileID: 1318554289}
   - component: {fileID: 1318554288}
   - component: {fileID: 1318554287}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8738,7 +8743,7 @@ GameObject:
   - component: {fileID: 1384100660}
   - component: {fileID: 1384100662}
   - component: {fileID: 1384100661}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9042,7 +9047,7 @@ GameObject:
   - component: {fileID: 1425627850}
   - component: {fileID: 1425627849}
   - component: {fileID: 1425627848}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonHallGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9062,7 +9067,7 @@ RectTransform:
   m_Children:
   - {fileID: 1384100660}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9214,7 +9219,7 @@ GameObject:
   - component: {fileID: 1431150944}
   - component: {fileID: 1431150946}
   - component: {fileID: 1431150945}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9763,7 +9768,7 @@ GameObject:
   - component: {fileID: 1533969465}
   - component: {fileID: 1533969467}
   - component: {fileID: 1533969466}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9995,7 +10000,7 @@ GameObject:
   - component: {fileID: 1589553441}
   - component: {fileID: 1589553443}
   - component: {fileID: 1589553442}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10454,7 +10459,7 @@ GameObject:
   - component: {fileID: 1651155040}
   - component: {fileID: 1651155042}
   - component: {fileID: 1651155041}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10764,7 +10769,7 @@ GameObject:
   - component: {fileID: 1676621484}
   - component: {fileID: 1676621486}
   - component: {fileID: 1676621485}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10990,7 +10995,7 @@ GameObject:
   - component: {fileID: 1727082184}
   - component: {fileID: 1727082186}
   - component: {fileID: 1727082185}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11067,7 +11072,7 @@ GameObject:
   - component: {fileID: 1760628626}
   - component: {fileID: 1760628628}
   - component: {fileID: 1760628627}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11292,7 +11297,7 @@ GameObject:
   - component: {fileID: 1766097040}
   - component: {fileID: 1766097039}
   - component: {fileID: 1766097038}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11510,7 +11515,7 @@ GameObject:
   - component: {fileID: 1816197131}
   - component: {fileID: 1816197133}
   - component: {fileID: 1816197132}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11715,7 +11720,7 @@ GameObject:
   - component: {fileID: 1849212714}
   - component: {fileID: 1849212713}
   - component: {fileID: 1849212712}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11934,6 +11939,7 @@ GameObject:
   - component: {fileID: 1872248367}
   - component: {fileID: 1872248366}
   - component: {fileID: 1872248365}
+  - component: {fileID: 1872248368}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -12009,6 +12015,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872248363}
   m_CullTransparentMesh: 0
+--- !u!65 &1872248368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872248363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 387.3, y: 500, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1882313629
 GameObject:
   m_ObjectHideFlags: 0
@@ -12270,7 +12289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928756722}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: CorridorButtonsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12292,7 +12311,7 @@ RectTransform:
   - {fileID: 388053710}
   - {fileID: 378034325}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12444,7 +12463,7 @@ GameObject:
   - component: {fileID: 1949480185}
   - component: {fileID: 1949480184}
   - component: {fileID: 1949480183}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12583,7 +12602,7 @@ GameObject:
   - component: {fileID: 1974259912}
   - component: {fileID: 1974259914}
   - component: {fileID: 1974259913}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12735,7 +12754,7 @@ GameObject:
   - component: {fileID: 2019284386}
   - component: {fileID: 2019284385}
   - component: {fileID: 2019284384}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonStairHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12949,7 +12968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037248844}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: RoomButtonsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12982,47 +13001,13 @@ RectTransform:
   - {fileID: 190209279}
   - {fileID: 901622099}
   m_Father: {fileID: 447457327}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 9.700012, y: -19.300007}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!21 &2039780251
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2062297373
 GameObject:
   m_ObjectHideFlags: 0
@@ -13037,7 +13022,7 @@ GameObject:
   - component: {fileID: 2062297377}
   - component: {fileID: 2062297376}
   - component: {fileID: 2062297375}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ButtonRoom9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13428,7 +13413,7 @@ GameObject:
   - component: {fileID: 2122429977}
   - component: {fileID: 2122429979}
   - component: {fileID: 2122429978}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

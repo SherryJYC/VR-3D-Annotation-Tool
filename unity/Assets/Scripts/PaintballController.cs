@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using EZEffects;
 
 public class PaintballController : Weapons
@@ -18,6 +19,7 @@ public class PaintballController : Weapons
     private Mesh selectedMesh;
     private Transform fireTransform; // The transform component of the laser for ease of use
 
+    public LayerMask MiniMapMask;
     // Use this for initialization
     void Start()
     {
@@ -38,22 +40,42 @@ public class PaintballController : Weapons
     // Update is called once per frame
     void Update()
     {
-        RaycastHit costantRay;
-        if (Physics.Raycast(trackedObj.transform.position, transform.forward, out costantRay, distanceOfShoot, shootableMask))
+        RaycastHit constantRay;
+        if (ShowMinimap.isMiniMapActive)
         {
-            ShowLaserTarget(costantRay);
-            HighlightMeshTarget(costantRay, Color.cyan, 0);
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MiniMapMask))
+            {
+                rayOfFire.SetActive(false);
+                targetOfFire.SetActive(false);
+                ShowLaser(constantRay);
+                var collider = constantRay.collider.gameObject;
+                if (collider.GetComponent<Button>() != null )
+                {
+                    if (TriggerIsPressed())
+                    {
+                        collider.GetComponent<Button>().onClick.Invoke();
+                    }
+                    else
+                    {
+                        collider.GetComponent<Button>().Select();
+                    }
+                }
+          
+            }
         }
         else
         {
-            rayOfFire.SetActive(false);
-            targetOfFire.SetActive(false);
-        }
-        if (TriggerIsPressed())
-        {
-            Animation();
-            Fire();
-        }
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, shootableMask))
+            {
+                ShowLaserTarget(constantRay);
+                HighlightMeshTarget(constantRay, Color.cyan, 0);
+                if (TriggerIsPressed())
+                {
+                    Animation();
+                    Fire();
+                }
+            }
+        }        
     }
 
     private void Animation()
@@ -114,6 +136,20 @@ public class PaintballController : Weapons
         mesh.normals = newNormals;
         mesh.uv = newUvs;
         mesh.triangles = triangles;
+    }
+
+    private void ShowLaser(RaycastHit target)
+    {
+        float brushSize = 1.0f;
+        rayOfFire.SetActive(true); //Show the laser
+        fireTransform.position = Vector3.Lerp(muzzleTrasform.transform.position, target.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
+        fireTransform.LookAt(target.point); // Rotate laser facing the hit point
+        fireTransform.localScale = new Vector3(0.0F + brushSize * 0.001F, 0.0F + brushSize * 0.001F,
+           target.distance);
+
+        //Change color of the laser
+        rayOfFire.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+
     }
 
     private void ShowLaserTarget(RaycastHit target)
@@ -328,6 +364,7 @@ public class PaintballController : Weapons
         // Single shot weapon.
         return device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger);
     }
+
     private int closestVeticeToCursor(Vector3[] vertices, Vector3 hitPosition)
     {
         float distance = (hitPosition - vertices[0]).magnitude;

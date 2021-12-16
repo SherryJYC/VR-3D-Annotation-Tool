@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapControl : MonoBehaviour
+public class MiniMapController : MonoBehaviour
 {
     public GameObject controllerLeft;
-
     private SteamVR_TrackedController controller;
     public static GameObject meshRGB;
     public static GameObject meshEmpty;

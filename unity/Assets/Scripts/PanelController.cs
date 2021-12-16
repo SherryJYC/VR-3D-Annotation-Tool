@@ -105,7 +105,6 @@ public class PanelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (menuActive == true || otherMenu == true)
         {
 
