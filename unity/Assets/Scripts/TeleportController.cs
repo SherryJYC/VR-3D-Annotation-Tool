@@ -31,8 +31,6 @@ public class TeleportController : MonoBehaviour {
         laserTeleport.transform.parent = transform;
         laserTransform = laserTeleport.transform;
         reticle = Instantiate(teleportReticlePrefab);
-        //reticle.transform.parent = transform;
-        //reticle.transform.position = new Vector3(0,0,0);
         teleportReticleTransform = reticle.transform;
         distanceOfTeleport = 100;
         reticle.SetActive(false);
@@ -62,6 +60,9 @@ public class TeleportController : MonoBehaviour {
 
                 //Show teleport reticle
                 reticle.SetActive(true);
+                PaintballController.rayOfFire.SetActive(false);
+                PaintballController.targetOfFire.SetActive(false);
+                PaintballController.MeshCursor.SetActive(false);
                 teleportReticleTransform.position = hitPoint + teleportReticleOffset;
 
                 shouldTeleport = true;
@@ -114,7 +115,7 @@ public class TeleportController : MonoBehaviour {
     {
         laserTeleport.SetActive(true); //Show the laser
 
-        laserTransform.position = Vector3.Lerp(trackedObj.transform.position, hitPoint, .5f); // Move laser to the middle between the controller and the position the raycast hit
+        laserTransform.position = Vector3.Lerp(muzzleTransform.position, hitPoint, .5f); // Move laser to the middle between the controller and the position the raycast hit
         laserTransform.LookAt(hitPoint); // Rotate laser facing the hit point
         laserTransform.localScale = new Vector3(laserTransform.localScale.x, laserTransform.localScale.y,
             hit.distance); // Scale laser so it fits exactly between the controller & the hit point

@@ -18,7 +18,6 @@ public class ShowMinimap : MonoBehaviour
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         //offset = new Vector3(0.0f, 0.6f, 0.4f);
         offset = new Vector3(0.0f, 0.6f, 0.0f);
-        //LeftController.GetComponent<SteamVR_TrackedController>().Gripped += switchScene;
     }
 
     private void Update()

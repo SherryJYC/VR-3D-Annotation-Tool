@@ -13,10 +13,11 @@ public class PaintballController : Weapons
     public EffectTracer TracerEffect;
     public GameObject laserPrefab; // The laser prefab
     public GameObject targetPrefab;
-    public GameObject MeshCursor;
+    public GameObject meshCursorPrefab;
 
-    private GameObject rayOfFire; // A reference to the spawned laser
-    private GameObject targetOfFire;
+    public static GameObject rayOfFire; // A reference to the spawned laser
+    public static GameObject targetOfFire;
+    public static GameObject MeshCursor;
     private Mesh selectedMesh;
     private Transform fireTransform; // The transform component of the laser for ease of use
 
@@ -36,6 +37,7 @@ public class PaintballController : Weapons
         radiusOfFire = 1f;
         factorOfScale = 0.001f;
         labelText = LabelText.GetComponent<TextMesh>();
+        MeshCursor = meshCursorPrefab;
         selectedMesh = MeshCursor.GetComponent<MeshFilter>().mesh;
         GetComponentInParent<SteamVR_TrackedController>().MenuButtonClicked += PanelController.MenuButton;
     }
@@ -46,11 +48,11 @@ public class PaintballController : Weapons
         RaycastHit constantRay;
         if (PanelController.menuActive)
         {
+            targetOfFire.SetActive(false);
+            MeshCursor.SetActive(false);
+            rayOfFire.SetActive(false);
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MenuMask))
             {
-                rayOfFire.SetActive(false);
-                targetOfFire.SetActive(false);
-                MeshCursor.SetActive(false);
                 ShowLaser(constantRay);
                 if (TriggerIsPressed())
                 {
@@ -84,11 +86,17 @@ public class PaintballController : Weapons
                 }
             }
         }
+        else if (ChangeVisualization.meshRGB.activeSelf == true)
+        {
+            MeshCursor.SetActive(false);
+            targetOfFire.SetActive(false);
+            rayOfFire.SetActive(false);
+        }
         else
         {
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, shootableMask))
             {
-               
+                MeshCursor.SetActive(true);
                 ShowLaserTarget(constantRay);
                 HighlightMeshTarget(constantRay, Color.cyan, 0);
                 if (TriggerIsPressed())
@@ -164,6 +172,7 @@ public class PaintballController : Weapons
     {
         float brushSize = 1.0f;
         rayOfFire.SetActive(true); //Show the laser
+        MeshCursor.SetActive(true);
         fireTransform.position = Vector3.Lerp(muzzleTrasform.transform.position, target.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
         fireTransform.LookAt(target.point); // Rotate laser facing the hit point
         fireTransform.localScale = new Vector3(0.0F + brushSize * 0.001F, 0.0F + brushSize * 0.001F,
@@ -191,7 +200,7 @@ public class PaintballController : Weapons
         targetOfFire.SetActive(true);
         targetOfFire.transform.position = target.point;
         targetOfFire.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target.normal);
-        targetOfFire.transform.localScale = new Vector3(0.01f * brushSize, 0.01f * brushSize, targetOfFire.transform.localScale.z);
+        targetOfFire.transform.localScale = new Vector3(0.001f * Mathf.Pow(5f, brushSize), 0.001f * Mathf.Pow(5f, brushSize), targetOfFire.transform.localScale.z);
 
         //Change color of the laser
         rayOfFire.GetComponent<Renderer>().material.SetColor("_Color", Weapons.current_color);

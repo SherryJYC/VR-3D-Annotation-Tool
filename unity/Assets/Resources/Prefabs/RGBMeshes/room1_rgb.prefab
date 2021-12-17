@@ -5091,6 +5091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6228510657647225238}
+  - component: {fileID: 64597227503352418}
   m_Layer: 9
   m_Name: room1_rgb
   m_TagString: Untagged
@@ -5178,3 +5179,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &64597227503352418
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228510657647195574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 855f61100756ebb47877cab872a3908b, type: 3}
