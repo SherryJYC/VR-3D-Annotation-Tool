@@ -4,145 +4,31 @@ using UnityEngine;
 
 public class PanelController : MonoBehaviour
 {
-    public GameObject controllerRight;
-    public LayerMask menuMask; // Mask to filter out areas where menu button 
-    public GameObject laserPrefab; // The laser prefab
-
-    private GameObject laser; // A reference to the spawned laser
-    private SteamVR_TrackedObject trackedObjRight;
-
-    private SteamVR_TrackedController controller;
-    private SteamVR_TrackedController controllerRightHand;
-
-    private SteamVR_Controller.Device device;
-    private SteamVR_Controller.Device deviceRight;
-
-    private Transform laserTransform; // The transform component of the laser for ease of use
     private Vector3 hitPoint; // Point where the raycast hits
     public static bool menuActive;
-    public static bool otherMenu;
-    public GameObject menu;
-    private GameObject miniMapMenu;
-
+    public GameObject PrefabMenu;
+    public static GameObject menu;
     // Use this for initialization
     void Start()
     {
-        //= ChangeVisualization.meshEmpty; // GameObject.Find("LoadMeshFromScript");
-        //meshRGB = ChangeVisualization.meshRGB;  //GameObject.Find("LoadMeshRGBFromScript");
-        laser = Instantiate(laserPrefab);
-        laserTransform = laser.transform;
-        trackedObjRight = controllerRight.GetComponent<SteamVR_TrackedObject>();
-        deviceRight = SteamVR_Controller.Input((int)trackedObjRight.index);
-        controllerRightHand = controllerRight.GetComponent<SteamVR_TrackedController>();
-        //controllerRightHand.TriggerClicked += TriggerClicked;
+        menu = PrefabMenu;
         menuActive = false;
-        otherMenu = false;
         menu.SetActive(false);
-
-        controllerRightHand.MenuButtonClicked += MenuButton;
-
-        //miniMapMenu = GameObject.FindObjectOfType<MenuMiniMap>().gameObject;
     }
-
-    private void TriggerClicked()
-    {
-
-        RaycastHit hit;
-
-        // Send out a raycast from the controller
-        if ((Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask)) && menuActive)
-        {
-            hitPoint = hit.point;
-            GameObject buttonMenu = GameObject.Find(hit.transform.name);
-            //Debug.Log(buttonMenu.name);
-
-
-            menuActive = false;
-            menu.SetActive(false);
-            MenuController.OpenMenu(buttonMenu.name, hit, otherMenu);
-
-            otherMenu = true;
-            ShowLaser(hit);
-
-        }
-        else if ((Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask)) && otherMenu)
-        {
-
-            menuActive = true;
-            menu.SetActive(true);
-            MenuController.OpenMenu(hit.transform.name, hit, otherMenu);
-            otherMenu = false;
-        }
-        else
-        {
-            laser.SetActive(false);
-        }
-
-    }
-
-    private void MenuButton(object sender, ClickedEventArgs e)
+    public static void MenuButton(object sender, ClickedEventArgs e)
     {
         Camera playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        GameObject faceHidden = GameObject.Find("faceHidden");
-        if (faceHidden == null)
+        if (menuActive == false)
         {
-            if (menuActive == false && otherMenu == false)
-            {
-                playerCamera.cullingMask = ~(1 << LayerMask.NameToLayer("Drawable"));
-                menuActive = true;
-                menu.SetActive(true);
-            }
-            else
-            {
-                playerCamera.cullingMask = -1;
-                menuActive = false;
-                menu.SetActive(false);
-                laser.SetActive(false);
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (menuActive == true || otherMenu == true)
-        {
-
-            RaycastHit hit;
-            if (Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, menuMask))
-            {
-                ShowLaser(hit);
-                if (deviceRight.GetPress(SteamVR_Controller.ButtonMask.Trigger))
-                {
-                    TriggerClicked();
-                }
-            }
-            else if (Physics.Raycast(trackedObjRight.transform.position, trackedObjRight.transform.forward, out hit, 100, 13)) //Layer MiniMap = 13
-            {
-                ShowLaser(hit);
-            }
-            else
-            {
-                laser.SetActive(false);
-            }
-
+            playerCamera.cullingMask = ~(1 << LayerMask.NameToLayer("Drawable"));
+            menuActive = true;
+            menu.SetActive(true);
         }
         else
         {
-
-            laser.SetActive(false);
+            playerCamera.cullingMask = -1;
+            menuActive = false;
+            menu.SetActive(false);
         }
-
     }
-
-    private void ShowLaser(RaycastHit hit)
-    {
-        laser.SetActive(true); //Show the laser
-
-        laserTransform.position = Vector3.Lerp(trackedObjRight.transform.position, hit.point, .5f); // Move laser to the middle between the controller and the position the raycast hit
-        laserTransform.LookAt(hit.point); // Rotate laser facing the hit point
-        laserTransform.localScale = new Vector3(laserTransform.localScale.x, laserTransform.localScale.y,
-            hit.distance); // Scale laser so it fits exactly between the controller & the hit point
-    }
-
 }

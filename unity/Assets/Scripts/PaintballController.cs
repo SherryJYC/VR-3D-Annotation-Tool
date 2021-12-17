@@ -13,6 +13,7 @@ public class PaintballController : Weapons
     public EffectTracer TracerEffect;
     public GameObject laserPrefab; // The laser prefab
     public GameObject targetPrefab;
+    public GameObject MeshCursor;
 
     private GameObject rayOfFire; // A reference to the spawned laser
     private GameObject targetOfFire;
@@ -20,6 +21,7 @@ public class PaintballController : Weapons
     private Transform fireTransform; // The transform component of the laser for ease of use
 
     public LayerMask MiniMapMask;
+    public LayerMask MenuMask;
     // Use this for initialization
     void Start()
     {
@@ -34,22 +36,42 @@ public class PaintballController : Weapons
         radiusOfFire = 1f;
         factorOfScale = 0.001f;
         labelText = LabelText.GetComponent<TextMesh>();
-        selectedMesh = GameObject.Find("HighlightedMesh").GetComponent<MeshFilter>().mesh;
+        selectedMesh = MeshCursor.GetComponent<MeshFilter>().mesh;
+        GetComponentInParent<SteamVR_TrackedController>().MenuButtonClicked += PanelController.MenuButton;
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit constantRay;
-        if (ShowMinimap.isMiniMapActive)
+        if (PanelController.menuActive)
         {
-            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MiniMapMask))
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MenuMask))
             {
                 rayOfFire.SetActive(false);
                 targetOfFire.SetActive(false);
+                MeshCursor.SetActive(false);
+                ShowLaser(constantRay);
+                if (TriggerIsPressed())
+                {
+                    hitPoint = constantRay.point;
+                    GameObject buttonMenu = GameObject.Find(constantRay.transform.name);
+                    PanelController.menuActive = false;
+                    PanelController.menu.SetActive(false);
+                    MenuController.OpenMenu(buttonMenu.name, constantRay, false);
+                }
+
+            }
+        }
+        else if (ShowMinimap.isMiniMapActive)
+        {
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MiniMapMask))
+            {
+                targetOfFire.SetActive(false);
+                MeshCursor.SetActive(false);
                 ShowLaser(constantRay);
                 var collider = constantRay.collider.gameObject;
-                if (collider.GetComponent<Button>() != null )
+                if (collider.GetComponent<Button>() != null)
                 {
                     if (TriggerIsPressed())
                     {
@@ -60,13 +82,13 @@ public class PaintballController : Weapons
                         collider.GetComponent<Button>().Select();
                     }
                 }
-          
             }
         }
         else
         {
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, shootableMask))
             {
+               
                 ShowLaserTarget(constantRay);
                 HighlightMeshTarget(constantRay, Color.cyan, 0);
                 if (TriggerIsPressed())
@@ -75,7 +97,7 @@ public class PaintballController : Weapons
                     Fire();
                 }
             }
-        }        
+        }
     }
 
     private void Animation()
@@ -165,6 +187,7 @@ public class PaintballController : Weapons
         fireTransform.localScale = new Vector3(0.0F + brushSize * 0.001F, 0.0F + brushSize * 0.001F,
             target.distance);
 
+        MeshCursor.SetActive(true);
         targetOfFire.SetActive(true);
         targetOfFire.transform.position = target.point;
         targetOfFire.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target.normal);
