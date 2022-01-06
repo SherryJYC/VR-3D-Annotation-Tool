@@ -1,6 +1,15 @@
 # VR-3D-Annotation-Tool
 
-This is the project for Mixed Reality Lab @ ETH Zurich 2021, aiming to develop a 3D labelling tool supprted by VR device.
+> This is the project for Mixed Reality Lab @ ETH Zurich 2021, aiming to develop a 3D labelling tool supprted by VR device. 
+
+Advances in technology have made possible the acquisition of 3D datasets of indoor
+spaces for the general public. Nevertheless, these acquired data still needs to be labelled (e.g annotated) to be used
+as training datasets. Therefore, the aim of our application is to facilitate this last step for the public through our
+VR (Virtual Realiy) application. Two labeling modes are provided in our application:
+1. User-Dyanmic mode: <br/>
+  user can walk into the scene of interest immersively
+3. User-Static mode:  <br/> 
+  user can label objects while sitting comfortably on a chair.
 
 # Demo
 > insert video later
@@ -28,7 +37,7 @@ Google Drive:
 - Open unity and the scene TestRoom2d3ds
 - Click on the GameObject Meshe and update Meshe RGB and Meshe Empty accordingly with the Prefab in VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs\RGBMeshes and VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs\EmptyMeshes  
 
-# 2 Versions of Labeling tools
+# 2 Labeling Modes
 
 ## User-Dynamic Labeling
 -  Controller guidance
@@ -49,6 +58,9 @@ Left controller            |          Right controller
 
 ## Acknowledgement
 This [git repository](https://github.com/pierlui92/Shooting-Labels) was used as the ground foundation of our project
+
+## Authours
+Cyprien Fol, Yuchang Jiang, Tianyu Wu, Yiming Zhao
 
 
 
