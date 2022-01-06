@@ -10,12 +10,16 @@ public class ChangeVisualization : MonoBehaviour {
     private SteamVR_TrackedController controller;
     public static GameObject meshRGB;
     public static GameObject meshEmpty;
-    private static int lastscene = 1; //1 is for empty 2 is for RGB
+    public int lastscene = 1; //1 is for empty 2 is for RGB
 
     // Use this for initialization
     void Start () {
         controller = controllerLeft.GetComponent<SteamVR_TrackedController>();
         controller.MenuButtonClicked += VisualizeRGB;
+
+    }
+    private void Awake()
+    {
         if (MainMenuLaserPointer.Tutorial)
         {
             MeshController.singleton.meshesEmpty.SetActive(false);
@@ -36,9 +40,8 @@ public class ChangeVisualization : MonoBehaviour {
 
     private void VisualizeRGB(object sender, ClickedEventArgs e)
     {
-        if (!MenuLaserPointer.menuActive)
-        {
-            if (meshRGB.activeSelf)
+ 
+            if (lastscene ==2)
             {
                 lastscene = 1;
                 meshRGB.SetActive(false);
@@ -50,12 +53,9 @@ public class ChangeVisualization : MonoBehaviour {
                 meshRGB.SetActive(true);
                 meshEmpty.SetActive(false);
             }
-        }
+        
     }
 
-    public static int  getlastscene()
-    {
-        return lastscene;
-    }
+ 
    
 }

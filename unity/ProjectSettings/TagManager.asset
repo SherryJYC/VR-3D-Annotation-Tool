@@ -16,6 +16,7 @@ TagManager:
   - MiniMapCamera
   - MiniMap
   - ColorRadialMenu
+  - Dynamic_Cam
   layers:
   - Default
   - TransparentFX
@@ -32,12 +33,12 @@ TagManager:
   - Intern
   - MiniMap
   - Level
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MainCamera
+  - Selectable_RGB
+  - Selectable_Empty
+  - Dynamic_Cam
+  - FeetQuad
+  - MeshName
   - 
   - 
   - 

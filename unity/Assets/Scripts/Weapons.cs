@@ -69,8 +69,8 @@ public class Weapons : MonoBehaviour
 
     protected void TrackModifiedMeshes()
     {
-        if (!MeshController.singleton.meshName.Contains(hit.collider.name))
-            MeshController.singleton.meshName.Add(hit.collider.name);
+       // if (!MeshController.singleton.meshName.Contains(hit.collider.name))
+           // MeshController.singleton.meshName.Add(hit.collider.name);
     }
 
     protected void ColorMesh(Mesh mesh, RaycastHit hit, Color col, GameObject meshHits, bool ColorArea)

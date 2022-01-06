@@ -6,72 +6,55 @@ using System;
 public class MeshController : MonoBehaviour
 {
 
-    private bool  pointcloud=false;
+
     public GameObject meshesRGB, meshesEmpty;
 
-    protected string[] emptyNameFiles;
-    protected string[] rgbNameFiles;
 
-    private string emptyPrefabs_dir;
-    private string RGBPrefabs_dir;
-   
 
-    protected int numberOfChuncks;
     public static Dictionary<string, int[]> faceLabel;
     public static MeshController singleton = null;
     public List<string> meshName = new List<string>();
+    public List<string> meshNameRGB = new List<string>();
     //public MeshModified meshesModified;
 
 
     void Awake()
     {
-        print("Debug--------------------");
-        if (GameObject.Find("ControlManager") == null || GameObject.Find("ControlManager").GetComponent<MainControl>().query_mode() == 0)
-        {
-            print("Debug");
-            DontDestroyOnLoad(this.gameObject);
-            LoadUserConfiguration();
-            if (MeshController.singleton == null)
-            {
-                RGBPrefabs_dir = "/Resources/Prefabs/RGBMeshes/";
-                emptyPrefabs_dir = "Prefabs/EmptyMeshes/";
-                singleton = this;
-                meshesEmpty = GameObject.Find("MeshesEmpty");
-                meshesRGB = GameObject.Find("MeshesRGB");
-                faceLabel = new Dictionary<string, int[]>();
 
-                InstatiatePrefabs();
-                InstatiatePrefabs(true);
-                if (pointcloud)
-                {
-                    GameObject.Find("MeshesRGB").transform.eulerAngles = new Vector3(0, 180, 0);
-                }
-            }
-            else
-            {
-                Destroy(this.gameObject);
-            }
-        }
-    }
 
-    public void load(string empty_dir, string rgb_dir)
 
-    {
+        
+
+        LoadUserConfiguration();
+
         if (MeshController.singleton == null)
         {
-            emptyPrefabs_dir = empty_dir;
-            RGBPrefabs_dir = rgb_dir;
+
             singleton = this;
             meshesEmpty = GameObject.Find("MeshesEmpty");
             meshesRGB = GameObject.Find("MeshesRGB");
             faceLabel = new Dictionary<string, int[]>();
-            InstatiatePrefabs();
-            InstatiatePrefabs(true);
+
 
         }
      
+  
+
     }
-    
+    private void Update()
+    {
+
+    }
+
+    public void ResetMesh()
+    {
+        meshName = new List<string>();
+        faceLabel = new Dictionary<string, int[]>();
+        foreach (Transform child in meshesRGB.transform) GameObject.Destroy(child.gameObject);
+        foreach (Transform child in meshesEmpty.transform) GameObject.Destroy(child.gameObject);
+
+    }
+
 
     public int GetIndexByName(string name)
     {
@@ -88,41 +71,32 @@ public class MeshController : MonoBehaviour
 
         return -1;
     }
+    public int GetIndexByNameRGB(string name)
+    {
+        if (meshNameRGB.Contains(name))
+        {
+            for (int i = 0; i < meshNameRGB.Count; i++)
+            {
+                if (meshNameRGB[i] == name)
+                {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
 
     public int Count()
     {
         return meshName.Count;
     }
 
-    public void InstatiatePrefabs(bool isRGB = false)
-    {
-        if (isRGB)
-        {
-            rgbNameFiles = getListFiles(RGBPrefabs_dir);
-            for (int i = 0; i < rgbNameFiles.Length; i++)
-            {
-                string nameFile = rgbNameFiles[i].Substring(Application.dataPath.Length + "Resources".Length + 2);
-                nameFile = nameFile.Split('.')[0];
-                //string nameFile = "static/mesh/rgb/refine";
-               
-                UnityEngine.Object pPrefab = Resources.Load(nameFile);
-                LoadPrefab(i, pPrefab, true);
-               
-            }
-        }
-        else
-        {
-            UnityEngine.Object[] emptyPrefabs = Resources.LoadAll(emptyPrefabs_dir);
-            for (int i = 0; i < emptyPrefabs.Length; i++)
-            {
-                LoadPrefab(i, emptyPrefabs[i], false);
-            }
-        }
-    }
 
-    private void LoadPrefab(int i, UnityEngine.Object pPrefab, bool isRgb = false)
+
+    public void LoadPrefab(int i, GameObject pNewObject, bool isRgb = false)
     {
-        GameObject pNewObject = (GameObject)GameObject.Instantiate(pPrefab);
+
 
         if (isRgb)
         {
@@ -133,7 +107,7 @@ public class MeshController : MonoBehaviour
         {
             pNewObject.transform.parent = meshesEmpty.transform;
 
-           
+
             if (pNewObject.transform.childCount == 0)
             {
                 Mesh region = pNewObject.GetComponent<LODMeshes>().highPolyMesh;
@@ -171,12 +145,30 @@ public class MeshController : MonoBehaviour
             {
                 if (string.Equals("pointcloud", line.Substring(0, found)))
                 {
-                    this.pointcloud = bool.Parse(line.Substring(found + 2, line.Length - found - 2));
+                    //this.pointcloud = bool.Parse(line.Substring(found + 2, line.Length - found - 2));
                 }
             }
         }
 
         file.Close();
+    }
+    public static Vector3 caculateCenter(GameObject target)
+    {
+
+        MeshFilter[] filters = target.GetComponentsInChildren<MeshFilter>();
+        Vector3 average_center = new Vector3(0f, 0f, 0f);
+        int mesh_counts = 0;
+
+        foreach (MeshFilter filter in filters)
+        {
+            average_center += filter.gameObject.transform.TransformPoint(filter.mesh.bounds.center);
+            mesh_counts++;
+        }
+        average_center = average_center / mesh_counts;
+        Debug.Log(average_center);
+        return average_center;
+
+
     }
 
 

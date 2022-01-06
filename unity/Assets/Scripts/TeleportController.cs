@@ -30,15 +30,23 @@ public class TeleportController : MonoBehaviour {
         laserTeleport = Instantiate(laserPrefab);
         laserTeleport.transform.parent = transform;
         laserTransform = laserTeleport.transform;
-        reticle = Instantiate(teleportReticlePrefab);
-        teleportReticleTransform = reticle.transform;
-        distanceOfTeleport = 100;
-        reticle.SetActive(false);
+
 
         trackedObj = controllerRight.GetComponent<SteamVR_TrackedObject>();
         device = SteamVR_Controller.Input((int)trackedObj.index);
+       
+        
+        distanceOfTeleport = 100;
+        
     }
+    private void Awake()
 
+    {
+        reticle = Instantiate(teleportReticlePrefab, GameObject.Find("Teleport").transform);
+        teleportReticleTransform = reticle.transform.parent.transform;
+        reticle.SetActive(false);
+
+    }
     private void Update()
     {
         Teleport();
@@ -78,6 +86,7 @@ public class TeleportController : MonoBehaviour {
             // Touchpad released this frame & valid teleport position found
            
         }
+
         else // Touchpad not held down, hide laser & teleport reticle
         {
             laserTeleport.SetActive(false);
@@ -90,6 +99,42 @@ public class TeleportController : MonoBehaviour {
             EffectivelyTeleport();
         }
     }
+
+    public void MiniMapTeleport(Ray MiniMapCameraRay)
+
+    {
+
+        if (Physics.Raycast(MiniMapCameraRay, out hit, distanceOfTeleport, teleportMask))
+        {
+            hitPoint = hit.point;
+
+            
+
+   
+            teleportReticleTransform.position = hitPoint + teleportReticleOffset;
+            if (TriggerIsPressed())
+                { EffectivelyTeleport(); }
+
+
+        }
+
+    }
+   public  bool TriggerIsPressed()
+   
+    {
+        return device.GetPress(SteamVR_Controller.ButtonMask.Trigger);
+    }
+
+
+    public void Teleport(Vector3 pose)
+    {
+
+        Vector3 difference = cameraRigTransform.position - headTransform.position; // Calculate the difference between the center of the virtual room & the player's head
+        difference.y = 0; // Don't change the final position's y position, it should always be equal to that of the hit point
+        cameraRigTransform.position = pose + difference; // Change the camera rig position to where the the teleport reticle was. Also add the difference so the new virtual room position is relative to the player position, allowing the player's new position to be exactly where they pointed. (see illustration)
+    }
+
+
 
     private void EffectivelyTeleport()
     {

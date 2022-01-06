@@ -276,20 +276,34 @@ public class IP_VR_RadialMenu : MonoBehaviour
 
     void ChangeColorSelectedWeaponCanvas(int i)
     {
-        GunController.colorSelected.GetComponent<Image>().color = images[i].color;
-        LaserGunController.colorSelected.GetComponent<Image>().color = images[i].color;
-        MachineGunController.colorSelected.GetComponent<Image>().color = images[i].color;
-        BazookaController.colorSelected.GetComponent<Image>().color = images[i].color;
+        
+        Color AssignColor = CheckValidColor(images[i].color);
+        GunController.colorSelected.GetComponent<Image>().color = AssignColor;
+        LaserGunController.colorSelected.GetComponent<Image>().color = AssignColor;
+        MachineGunController.colorSelected.GetComponent<Image>().color = AssignColor;
+        BazookaController.colorSelected.GetComponent<Image>().color = AssignColor;
     }
 
     void ChangeColorWeapons(int i)
-    {
-        LaserGunController.current_color = images[i].color;
-        GunController.current_color = images[i].color;
-        MachineGunController.current_color = images[i].color;
-        BazookaController.current_color = images[i].color;
+
+    {   Color AssignColor= CheckValidColor(images[i].color);
+        LaserGunController.current_color = AssignColor;
+        GunController.current_color = AssignColor;
+        MachineGunController.current_color = AssignColor;
+        BazookaController.current_color = AssignColor;
     }
 
+    Color CheckValidColor(Color ColorToCheck)
+    {
+        if (LoadColorsConfiguration.categoriesFromRGB.ContainsKey(ColorToCheck))
+            return ColorToCheck;
+        else
+        {
+            return LoadColorsConfiguration.RGBFromCategories[0];
+      }
+        
+         
+    }
     void HandleDebugText(string aString)
     {
         if(m_DebugText)

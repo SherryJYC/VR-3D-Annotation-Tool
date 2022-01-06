@@ -98,7 +98,7 @@ public class MenuLaserPointer : MonoBehaviour {
 
     private void MenuButton(object sender, ClickedEventArgs e)
     {
-
+        /*
         GameObject faceHidden = GameObject.Find("faceHidden");
         if (faceHidden == null)
         {
@@ -118,7 +118,7 @@ public class MenuLaserPointer : MonoBehaviour {
                 if(ChangeVisualization.getlastscene() == 2) ChangeVisualization.meshRGB.SetActive(true);
                 
             }
-        }
+        }*/
     }
 
 // Update is called once per frame

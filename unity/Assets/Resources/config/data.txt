@@ -1,0 +1,126 @@
+{
+	"datalist": [{
+		"name": "Area3 rooms_2d3d",
+		"x_size":30,
+		"z_size":25,
+		"FolderDirectory": "/Resources/Models/Area3",
+		"RGBDirectory":"/RGB/",
+		"EmptyDirectory":"/Empty/",
+		"Description": "indoor scenes with colored meshes from 2d3d dataset",
+		"submeshes": [{
+			"seq": 0,
+			"name": "Hall",
+			"RGBmesh": "hall_rgb",
+			"EmptyMesh": "hall_empty"
+		},
+		{
+			"seq": 1,
+			"name": "Stairhall",
+			"RGBmesh": "stairhall_rgb",
+			"EmptyMesh": "stairhall_empty"
+		},
+		{
+			"seq": 2,
+			"name": "Corridor 1",
+			"RGBmesh": "corridor1_rgb",
+			"EmptyMesh": "corridor1_empty"
+		},
+		{
+			"seq": 3,
+			"name": "Corridor 2",
+			"RGBmesh": "corridor2_rgb",
+			"EmptyMesh": "corridor2_empty"
+		},
+		{
+			"seq": 4,
+			"name": "Corridor 3",
+			"RGBmesh": "corridor3_rgb",
+			"EmptyMesh": "corridor3_empty"
+		},
+		{
+			"seq": 5,
+			"name": "Room 1",
+			"RGBmesh": "room1_rgb",
+			"EmptyMesh": "room1_empty"
+		},
+		{
+			"seq": 6,
+			"name": "Room 2",
+			"RGBmesh": "room2_rgb",
+			"EmptyMesh": "room2_empty"
+		},
+		{
+			"seq": 7,
+			"name": "Room 3",
+			"RGBmesh": "room3_rgb",
+			"EmptyMesh": "room3_empty"
+		},
+		{
+			"seq": 8,
+			"name": "Room 4",
+			"RGBmesh": "room4_rgb",
+			"EmptyMesh": "room4_empty"
+		},
+		{
+			"seq": 9,
+			"name": "Room 5",
+			"RGBmesh": "room5_rgb",
+			"EmptyMesh": "room5_empty"
+		},		
+		{
+			"seq": 10,
+			"name": "Room 6",
+			"RGBmesh": "room6_rgb",
+			"EmptyMesh": "room6_empty"
+		},
+		{
+			"seq": 11,
+			"name": "Room 7",
+			"RGBmesh": "room7_rgb",
+			"EmptyMesh": "room7_empty"
+		},
+		{
+			"seq": 12,
+			"name": "Room 8",
+			"RGBmesh": "room8_rgb",
+			"EmptyMesh": "room8_empty"
+		},
+		{
+			"seq": 13,
+			"name": "Room 9",
+			"RGBmesh": "room9_rgb",
+			"EmptyMesh": "room9_empty"
+		},
+		{
+			"seq": 14,
+			"name": "Room 10",
+			"RGBmesh": "room10_rgb",
+			"EmptyMesh": "room10_empty"
+		},
+		{
+			"seq": 15,
+			"name": "Room 11",
+			"RGBmesh": "room11_rgb",
+			"EmptyMesh": "room11_empty"
+		},
+		{
+			"seq": 16,
+			"name": "Room 12",
+			"RGBmesh": "room12_rgb",
+			"EmptyMesh": "room12_empty"
+		},
+		{
+			"seq": 17,
+			"name": "Room 13",
+			"RGBmesh": "room13_rgb",
+			"EmptyMesh": "room13_empty"
+		},
+		{
+			"seq": 18,
+			"name": "Room 14",
+			"RGBmesh": "room14_rgb",
+			"EmptyMesh": "room14_empty"
+		}
+		]
+	}]
+}

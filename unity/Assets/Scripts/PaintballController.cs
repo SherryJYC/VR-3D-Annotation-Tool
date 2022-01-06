@@ -8,6 +8,8 @@ using EZEffects;
 
 public class PaintballController : Weapons
 {
+    
+
     public GameObject LabelText;
     public static TextMesh labelText;
     public EffectTracer TracerEffect;
@@ -24,6 +26,7 @@ public class PaintballController : Weapons
     public LayerMask MiniMapMask;
     public LayerMask MenuMask;
     // Use this for initialization
+    public LineRenderer lineRenderer;
     void Start()
     {
         Initialize();
@@ -38,35 +41,50 @@ public class PaintballController : Weapons
         factorOfScale = 0.001f;
         labelText = LabelText.GetComponent<TextMesh>();
         MeshCursor = meshCursorPrefab;
+        MeshCursor.transform.parent = GameObject.Find("Meshes").transform;
         selectedMesh = MeshCursor.GetComponent<MeshFilter>().mesh;
-        GetComponentInParent<SteamVR_TrackedController>().MenuButtonClicked += PanelController.MenuButton;
+        lineRenderer = GetComponent<LineRenderer>();
+       
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        RaycastHit constantRay;
-        if (PanelController.menuActive)
-        {
-            targetOfFire.SetActive(false);
-            MeshCursor.SetActive(false);
-            rayOfFire.SetActive(false);
-            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MenuMask))
-            {
-                ShowLaser(constantRay);
-                if (TriggerIsPressed())
-                {
-                    hitPoint = constantRay.point;
-                    GameObject buttonMenu = GameObject.Find(constantRay.transform.name);
-                    PanelController.menuActive = false;
-                    PanelController.menu.SetActive(false);
-                    MenuController.OpenMenu(buttonMenu.name, constantRay, false);
-                }
 
-            }
-        }
-        else if (ShowMinimap.isMiniMapActive)
+    void MiniMapTeleport(RaycastHit constantRay)
+    {
+        Vector2 mapSize=constantRay.collider.gameObject.GetComponent<RectTransform>().rect.size;
+        Vector3 LocalPosition = constantRay.collider.transform.InverseTransformPoint(constantRay.point);
+        float size_x = mapSize.x;
+        float size_y = mapSize.y;
+        Vector3 viewpoint = new Vector3((LocalPosition.x + size_x /2)/ size_x, (LocalPosition.y+ size_x / 2) / size_y, 0f);
+        Debug.Log(viewpoint);
+        Ray MiniMapCameraRay=GameObject.Find("MiniMapCamera").GetComponent<Camera>().ViewportPointToRay(viewpoint);
+        gameObject.GetComponent<TeleportController>().MiniMapTeleport(MiniMapCameraRay);
+
+    }
+    void Update()
+    {   //if (change_mode_actived) return;
+        RaycastHit constantRay;
+
+        if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MenuMask)|| Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MiniMapMask))
         {
+            lineRenderer.enabled = true;
+            MeshCursor.SetActive(false);
+            targetOfFire.SetActive(false);
+            rayOfFire.SetActive(false);
+
+            float targetLength = constantRay.distance;
+            Vector3 endPosition = transform.position + (transform.forward * targetLength);
+            
+            // Set linerenderer
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, endPosition);
+            if (constantRay.collider.name == "MiniMapContent") MiniMapTeleport(constantRay);
+        }
+        /*
+        else  if (ShowMinimap.isMiniMapActive)
+        {
+            lineRenderer.enabled = false;
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, MiniMapMask))
             {
                 targetOfFire.SetActive(false);
@@ -85,17 +103,25 @@ public class PaintballController : Weapons
                     }
                 }
             }
-        }
+        }*/
         else if (ChangeVisualization.meshRGB.activeSelf == true)
         {
+            lineRenderer.enabled = false;
             MeshCursor.SetActive(false);
             targetOfFire.SetActive(false);
             rayOfFire.SetActive(false);
         }
         else
         {
+            lineRenderer.enabled = false;
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out constantRay, distanceOfShoot, shootableMask))
             {
+                
+                MeshCursor.transform.SetParent(constantRay.collider.transform);
+                MeshCursor.transform.localPosition = Vector3.zero;
+                MeshCursor.transform.localRotation = Quaternion.identity;
+                MeshCursor.transform.localScale = Vector3.one;
+
                 MeshCursor.SetActive(true);
                 ShowLaserTarget(constantRay);
                 HighlightMeshTarget(constantRay, Color.cyan, 0);
@@ -104,7 +130,15 @@ public class PaintballController : Weapons
                     Animation();
                     Fire();
                 }
+            }else
+            {
+                MeshCursor.SetActive(false);
+                targetOfFire.SetActive(false);
+                rayOfFire.SetActive(false);
+                
+                
             }
+                
         }
     }
 
@@ -128,7 +162,7 @@ public class PaintballController : Weapons
             if (meshCollider != null || meshCollider.sharedMesh != null)
             {
                 ChangeFactorOfScale(highPoly);
-                SplitMesh(highPoly);
+               
                 ColorMesh(highPoly, hit, current_color, meshHits, radiusOfFire > 1);
                 SaveColorTemporary(meshHits);
             }
@@ -136,37 +170,7 @@ public class PaintballController : Weapons
         }
     }
 
-    void SplitMesh(Mesh mesh)
-    {
-        int[] triangles = mesh.triangles;
-        Vector3[] verts = mesh.vertices;
-        Vector3[] normals = mesh.normals;
-        Vector2[] uvs = mesh.uv;
 
-        Vector3[] newVerts;
-        Vector3[] newNormals;
-        Vector2[] newUvs;
-
-        int n = triangles.Length;
-        newVerts = new Vector3[n];
-        newNormals = new Vector3[n];
-        newUvs = new Vector2[n];
-
-        for (int i = 0; i < n; i++)
-        {
-            newVerts[i] = verts[triangles[i]];
-            newNormals[i] = normals[triangles[i]];
-            if (uvs.Length > 0)
-            {
-                newUvs[i] = uvs[triangles[i]];
-            }
-            triangles[i] = i;
-        }
-        mesh.vertices = newVerts;
-        mesh.normals = newNormals;
-        mesh.uv = newUvs;
-        mesh.triangles = triangles;
-    }
 
     private void ShowLaser(RaycastHit target)
     {

@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 54b6a4bff638fda47aad9f17c6395043
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: chunk000_group000_sub000.002
+    100002: chunk001_group000_sub000.013
+    100004: chunk005_group000_sub000.011
+    100006: chunk010_group000_sub000.011
+    100008: chunk011_group000_sub000.007
+    100010: chunk012_group000_sub000.010
+    100012: chunk014_group000_sub000.013
+    100014: chunk015_group000_sub000.012
+    100016: chunk016_group000_sub000.013
+    100018: chunk019_group000_sub000.009
+    100020: chunk020_group000_sub000.009
+    100022: chunk021_group000_sub000.014
+    100024: chunk022_group000_sub000.014
+    100026: chunk023_group000_sub000.011
+    100028: chunk024_group000_sub000.013
+    100030: chunk025_group000_sub000.012
+    100032: chunk026_group000_sub000.014
+    100034: chunk028_group000_sub000.011
+    100036: chunk029_group000_sub000.011
+    100038: chunk030_group000_sub000.012
+    100040: chunk031_group000_sub000.011
+    100042: chunk032_group000_sub000.011
+    100044: chunk035_group000_sub000.014
+    100046: chunk037_group000_sub000.012
+    100048: chunk038_group000_sub000.011
+    100050: chunk039_group000_sub000.012
+    100052: chunk041_group000_sub000.008
+    100054: chunk042_group000_sub000.013
+    100056: chunk045_group000_sub000.010
+    100058: chunk047_group000_sub000.012
+    100060: chunk048_group000_sub000.010
+    100062: chunk049_group000_sub000.010
+    100064: chunk050_group000_sub000.012
+    100066: chunk052_group000_sub000.012
+    100068: chunk053_group000_sub000.012
+    100070: chunk055_group000_sub000.012
+    100072: chunk056_group000_sub000.012
+    100074: chunk057_group000_sub000.010
+    100076: chunk058_group000_sub000.014
+    100078: chunk059_group000_sub000.009
+    100080: chunk061_group000_sub000.013
+    100082: chunk063_group000_sub000.013
+    100084: chunk065_group000_sub000.013
+    100086: chunk067_group000_sub000.012
+    100088: chunk068_group000_sub000.014
+    100090: chunk069_group000_sub000.013
+    100092: chunk071_group000_sub000.012
+    100094: chunk072_group000_sub000.013
+    100096: chunk073_group000_sub000.012
+    100098: chunk074_group000_sub000.011
+    100100: chunk075_group000_sub000.012
+    100102: chunk076_group000_sub000.011
+    100104: chunk079_group000_sub000.013
+    100106: chunk080_group000_sub000.012
+    100108: chunk081_group000_sub000.012
+    100110: chunk082_group000_sub000.015
+    100112: chunk083_group000_sub000.013
+    100114: chunk084_group000_sub000.014
+    100116: chunk085_group000_sub000.014
+    100118: chunk086_group000_sub000.016
+    100120: chunk087_group000_sub000.014
+    100122: chunk088_group000_sub000.015
+    100124: chunk089_group000_sub000.015
+    100126: chunk090_group000_sub000.017
+    100128: chunk092_group000_sub000.018
+    100130: chunk093_group000_sub000.017
+    100132: //RootNode
+    400000: chunk000_group000_sub000.002
+    400002: chunk001_group000_sub000.013
+    400004: chunk005_group000_sub000.011
+    400006: chunk010_group000_sub000.011
+    400008: chunk011_group000_sub000.007
+    400010: chunk012_group000_sub000.010
+    400012: chunk014_group000_sub000.013
+    400014: chunk015_group000_sub000.012
+    400016: chunk016_group000_sub000.013
+    400018: chunk019_group000_sub000.009
+    400020: chunk020_group000_sub000.009
+    400022: chunk021_group000_sub000.014
+    400024: chunk022_group000_sub000.014
+    400026: chunk023_group000_sub000.011
+    400028: chunk024_group000_sub000.013
+    400030: chunk025_group000_sub000.012
+    400032: chunk026_group000_sub000.014
+    400034: chunk028_group000_sub000.011
+    400036: chunk029_group000_sub000.011
+    400038: chunk030_group000_sub000.012
+    400040: chunk031_group000_sub000.011
+    400042: chunk032_group000_sub000.011
+    400044: chunk035_group000_sub000.014
+    400046: chunk037_group000_sub000.012
+    400048: chunk038_group000_sub000.011
+    400050: chunk039_group000_sub000.012
+    400052: chunk041_group000_sub000.008
+    400054: chunk042_group000_sub000.013
+    400056: chunk045_group000_sub000.010
+    400058: chunk047_group000_sub000.012
+    400060: chunk048_group000_sub000.010
+    400062: chunk049_group000_sub000.010
+    400064: chunk050_group000_sub000.012
+    400066: chunk052_group000_sub000.012
+    400068: chunk053_group000_sub000.012
+    400070: chunk055_group000_sub000.012
+    400072: chunk056_group000_sub000.012
+    400074: chunk057_group000_sub000.010
+    400076: chunk058_group000_sub000.014
+    400078: chunk059_group000_sub000.009
+    400080: chunk061_group000_sub000.013
+    400082: chunk063_group000_sub000.013
+    400084: chunk065_group000_sub000.013
+    400086: chunk067_group000_sub000.012
+    400088: chunk068_group000_sub000.014
+    400090: chunk069_group000_sub000.013
+    400092: chunk071_group000_sub000.012
+    400094: chunk072_group000_sub000.013
+    400096: chunk073_group000_sub000.012
+    400098: chunk074_group000_sub000.011
+    400100: chunk075_group000_sub000.012
+    400102: chunk076_group000_sub000.011
+    400104: chunk079_group000_sub000.013
+    400106: chunk080_group000_sub000.012
+    400108: chunk081_group000_sub000.012
+    400110: chunk082_group000_sub000.015
+    400112: chunk083_group000_sub000.013
+    400114: chunk084_group000_sub000.014
+    400116: chunk085_group000_sub000.014
+    400118: chunk086_group000_sub000.016
+    400120: chunk087_group000_sub000.014
+    400122: chunk088_group000_sub000.015
+    400124: chunk089_group000_sub000.015
+    400126: chunk090_group000_sub000.017
+    400128: chunk092_group000_sub000.018
+    400130: chunk093_group000_sub000.017
+    400132: //RootNode
+    2100000: 41a8012778ff4fc1800a7794bd15d81e_000.jpg
+    2100002: 41a8012778ff4fc1800a7794bd15d81e_001.jpg
+    2100004: 41a8012778ff4fc1800a7794bd15d81e_005.jpg
+    2100006: 41a8012778ff4fc1800a7794bd15d81e_010.jpg
+    2100008: 41a8012778ff4fc1800a7794bd15d81e_011.jpg
+    2100010: 41a8012778ff4fc1800a7794bd15d81e_012.jpg
+    2100012: 41a8012778ff4fc1800a7794bd15d81e_014.jpg
+    2100014: 41a8012778ff4fc1800a7794bd15d81e_015.jpg
+    2100016: 41a8012778ff4fc1800a7794bd15d81e_016.jpg
+    2100018: 41a8012778ff4fc1800a7794bd15d81e_019.jpg
+    2100020: 41a8012778ff4fc1800a7794bd15d81e_020.jpg
+    2100022: 41a8012778ff4fc1800a7794bd15d81e_021.jpg
+    2100024: 41a8012778ff4fc1800a7794bd15d81e_022.jpg
+    2100026: 41a8012778ff4fc1800a7794bd15d81e_023.jpg
+    2100028: 41a8012778ff4fc1800a7794bd15d81e_024.jpg
+    2100030: 41a8012778ff4fc1800a7794bd15d81e_025.jpg
+    2100032: 41a8012778ff4fc1800a7794bd15d81e_026.jpg
+    2100034: 41a8012778ff4fc1800a7794bd15d81e_028.jpg
+    2100036: 41a8012778ff4fc1800a7794bd15d81e_029.jpg
+    2100038: 41a8012778ff4fc1800a7794bd15d81e_030.jpg
+    2100040: 41a8012778ff4fc1800a7794bd15d81e_031.jpg
+    2100042: 41a8012778ff4fc1800a7794bd15d81e_032.jpg
+    2100044: 41a8012778ff4fc1800a7794bd15d81e_034.jpg
+    2100046: 41a8012778ff4fc1800a7794bd15d81e_036.jpg
+    2100048: 41a8012778ff4fc1800a7794bd15d81e_037.jpg
+    2100050: 41a8012778ff4fc1800a7794bd15d81e_038.jpg
+    2100052: 41a8012778ff4fc1800a7794bd15d81e_040.jpg
+    2100054: 41a8012778ff4fc1800a7794bd15d81e_041.jpg
+    2100056: 41a8012778ff4fc1800a7794bd15d81e_044.jpg
+    2100058: 41a8012778ff4fc1800a7794bd15d81e_045.jpg
+    2100060: 41a8012778ff4fc1800a7794bd15d81e_046.jpg
+    2100062: 41a8012778ff4fc1800a7794bd15d81e_047.jpg
+    2100064: 41a8012778ff4fc1800a7794bd15d81e_048.jpg
+    2100066: 41a8012778ff4fc1800a7794bd15d81e_050.jpg
+    2100068: 41a8012778ff4fc1800a7794bd15d81e_051.jpg
+    2100070: 41a8012778ff4fc1800a7794bd15d81e_053.jpg
+    2100072: 41a8012778ff4fc1800a7794bd15d81e_054.jpg
+    2100074: 41a8012778ff4fc1800a7794bd15d81e_055.jpg
+    2100076: 41a8012778ff4fc1800a7794bd15d81e_056.jpg
+    2100078: 41a8012778ff4fc1800a7794bd15d81e_057.jpg
+    2100080: 41a8012778ff4fc1800a7794bd15d81e_059.jpg
+    2100082: 41a8012778ff4fc1800a7794bd15d81e_061.jpg
+    2100084: 41a8012778ff4fc1800a7794bd15d81e_063.jpg
+    2100086: 41a8012778ff4fc1800a7794bd15d81e_065.jpg
+    2100088: 41a8012778ff4fc1800a7794bd15d81e_066.jpg
+    2100090: 41a8012778ff4fc1800a7794bd15d81e_067.jpg
+    2100092: 41a8012778ff4fc1800a7794bd15d81e_069.jpg
+    2100094: 41a8012778ff4fc1800a7794bd15d81e_070.jpg
+    2100096: 41a8012778ff4fc1800a7794bd15d81e_071.jpg
+    2100098: 41a8012778ff4fc1800a7794bd15d81e_072.jpg
+    2100100: 41a8012778ff4fc1800a7794bd15d81e_073.jpg
+    2100102: 41a8012778ff4fc1800a7794bd15d81e_074.jpg
+    2100104: 41a8012778ff4fc1800a7794bd15d81e_076.jpg
+    2100106: 41a8012778ff4fc1800a7794bd15d81e_077.jpg
+    2100108: 41a8012778ff4fc1800a7794bd15d81e_078.jpg
+    2100110: 41a8012778ff4fc1800a7794bd15d81e_079.jpg
+    2100112: 41a8012778ff4fc1800a7794bd15d81e_080.jpg
+    2100114: 41a8012778ff4fc1800a7794bd15d81e_081.jpg
+    2100116: 41a8012778ff4fc1800a7794bd15d81e_082.jpg
+    2100118: 41a8012778ff4fc1800a7794bd15d81e_083.jpg
+    2100120: 41a8012778ff4fc1800a7794bd15d81e_084.jpg
+    2100122: 41a8012778ff4fc1800a7794bd15d81e_085.jpg
+    2100124: 41a8012778ff4fc1800a7794bd15d81e_086.jpg
+    2100126: 41a8012778ff4fc1800a7794bd15d81e_087.jpg
+    2100128: 41a8012778ff4fc1800a7794bd15d81e_088.jpg
+    2100130: 41a8012778ff4fc1800a7794bd15d81e_089.jpg
+    2300000: chunk000_group000_sub000.002
+    2300002: chunk001_group000_sub000.013
+    2300004: chunk005_group000_sub000.011
+    2300006: chunk010_group000_sub000.011
+    2300008: chunk011_group000_sub000.007
+    2300010: chunk012_group000_sub000.010
+    2300012: chunk014_group000_sub000.013
+    2300014: chunk015_group000_sub000.012
+    2300016: chunk016_group000_sub000.013
+    2300018: chunk019_group000_sub000.009
+    2300020: chunk020_group000_sub000.009
+    2300022: chunk021_group000_sub000.014
+    2300024: chunk022_group000_sub000.014
+    2300026: chunk023_group000_sub000.011
+    2300028: chunk024_group000_sub000.013
+    2300030: chunk025_group000_sub000.012
+    2300032: chunk026_group000_sub000.014
+    2300034: chunk028_group000_sub000.011
+    2300036: chunk029_group000_sub000.011
+    2300038: chunk030_group000_sub000.012
+    2300040: chunk031_group000_sub000.011
+    2300042: chunk032_group000_sub000.011
+    2300044: chunk035_group000_sub000.014
+    2300046: chunk037_group000_sub000.012
+    2300048: chunk038_group000_sub000.011
+    2300050: chunk039_group000_sub000.012
+    2300052: chunk041_group000_sub000.008
+    2300054: chunk042_group000_sub000.013
+    2300056: chunk045_group000_sub000.010
+    2300058: chunk047_group000_sub000.012
+    2300060: chunk048_group000_sub000.010
+    2300062: chunk049_group000_sub000.010
+    2300064: chunk050_group000_sub000.012
+    2300066: chunk052_group000_sub000.012
+    2300068: chunk053_group000_sub000.012
+    2300070: chunk055_group000_sub000.012
+    2300072: chunk056_group000_sub000.012
+    2300074: chunk057_group000_sub000.010
+    2300076: chunk058_group000_sub000.014
+    2300078: chunk059_group000_sub000.009
+    2300080: chunk061_group000_sub000.013
+    2300082: chunk063_group000_sub000.013
+    2300084: chunk065_group000_sub000.013
+    2300086: chunk067_group000_sub000.012
+    2300088: chunk068_group000_sub000.014
+    2300090: chunk069_group000_sub000.013
+    2300092: chunk071_group000_sub000.012
+    2300094: chunk072_group000_sub000.013
+    2300096: chunk073_group000_sub000.012
+    2300098: chunk074_group000_sub000.011
+    2300100: chunk075_group000_sub000.012
+    2300102: chunk076_group000_sub000.011
+    2300104: chunk079_group000_sub000.013
+    2300106: chunk080_group000_sub000.012
+    2300108: chunk081_group000_sub000.012
+    2300110: chunk082_group000_sub000.015
+    2300112: chunk083_group000_sub000.013
+    2300114: chunk084_group000_sub000.014
+    2300116: chunk085_group000_sub000.014
+    2300118: chunk086_group000_sub000.016
+    2300120: chunk087_group000_sub000.014
+    2300122: chunk088_group000_sub000.015
+    2300124: chunk089_group000_sub000.015
+    2300126: chunk090_group000_sub000.017
+    2300128: chunk092_group000_sub000.018
+    2300130: chunk093_group000_sub000.017
+    3300000: chunk000_group000_sub000.002
+    3300002: chunk001_group000_sub000.013
+    3300004: chunk005_group000_sub000.011
+    3300006: chunk010_group000_sub000.011
+    3300008: chunk011_group000_sub000.007
+    3300010: chunk012_group000_sub000.010
+    3300012: chunk014_group000_sub000.013
+    3300014: chunk015_group000_sub000.012
+    3300016: chunk016_group000_sub000.013
+    3300018: chunk019_group000_sub000.009
+    3300020: chunk020_group000_sub000.009
+    3300022: chunk021_group000_sub000.014
+    3300024: chunk022_group000_sub000.014
+    3300026: chunk023_group000_sub000.011
+    3300028: chunk024_group000_sub000.013
+    3300030: chunk025_group000_sub000.012
+    3300032: chunk026_group000_sub000.014
+    3300034: chunk028_group000_sub000.011
+    3300036: chunk029_group000_sub000.011
+    3300038: chunk030_group000_sub000.012
+    3300040: chunk031_group000_sub000.011
+    3300042: chunk032_group000_sub000.011
+    3300044: chunk035_group000_sub000.014
+    3300046: chunk037_group000_sub000.012
+    3300048: chunk038_group000_sub000.011
+    3300050: chunk039_group000_sub000.012
+    3300052: chunk041_group000_sub000.008
+    3300054: chunk042_group000_sub000.013
+    3300056: chunk045_group000_sub000.010
+    3300058: chunk047_group000_sub000.012
+    3300060: chunk048_group000_sub000.010
+    3300062: chunk049_group000_sub000.010
+    3300064: chunk050_group000_sub000.012
+    3300066: chunk052_group000_sub000.012
+    3300068: chunk053_group000_sub000.012
+    3300070: chunk055_group000_sub000.012
+    3300072: chunk056_group000_sub000.012
+    3300074: chunk057_group000_sub000.010
+    3300076: chunk058_group000_sub000.014
+    3300078: chunk059_group000_sub000.009
+    3300080: chunk061_group000_sub000.013
+    3300082: chunk063_group000_sub000.013
+    3300084: chunk065_group000_sub000.013
+    3300086: chunk067_group000_sub000.012
+    3300088: chunk068_group000_sub000.014
+    3300090: chunk069_group000_sub000.013
+    3300092: chunk071_group000_sub000.012
+    3300094: chunk072_group000_sub000.013
+    3300096: chunk073_group000_sub000.012
+    3300098: chunk074_group000_sub000.011
+    3300100: chunk075_group000_sub000.012
+    3300102: chunk076_group000_sub000.011
+    3300104: chunk079_group000_sub000.013
+    3300106: chunk080_group000_sub000.012
+    3300108: chunk081_group000_sub000.012
+    3300110: chunk082_group000_sub000.015
+    3300112: chunk083_group000_sub000.013
+    3300114: chunk084_group000_sub000.014
+    3300116: chunk085_group000_sub000.014
+    3300118: chunk086_group000_sub000.016
+    3300120: chunk087_group000_sub000.014
+    3300122: chunk088_group000_sub000.015
+    3300124: chunk089_group000_sub000.015
+    3300126: chunk090_group000_sub000.017
+    3300128: chunk092_group000_sub000.018
+    3300130: chunk093_group000_sub000.017
+    4300000: chunk000_group000_sub000.002
+    4300002: chunk001_group000_sub000.013
+    4300004: chunk005_group000_sub000.011
+    4300006: chunk010_group000_sub000.011
+    4300008: chunk011_group000_sub000.007
+    4300010: chunk012_group000_sub000.010
+    4300012: chunk014_group000_sub000.013
+    4300014: chunk015_group000_sub000.012
+    4300016: chunk016_group000_sub000.013
+    4300018: chunk019_group000_sub000.009
+    4300020: chunk020_group000_sub000.009
+    4300022: chunk021_group000_sub000.014
+    4300024: chunk022_group000_sub000.014
+    4300026: chunk023_group000_sub000.011
+    4300028: chunk024_group000_sub000.013
+    4300030: chunk025_group000_sub000.012
+    4300032: chunk026_group000_sub000.014
+    4300034: chunk028_group000_sub000.011
+    4300036: chunk029_group000_sub000.011
+    4300038: chunk030_group000_sub000.012
+    4300040: chunk031_group000_sub000.011
+    4300042: chunk032_group000_sub000.011
+    4300044: chunk035_group000_sub000.014
+    4300046: chunk037_group000_sub000.012
+    4300048: chunk038_group000_sub000.011
+    4300050: chunk039_group000_sub000.012
+    4300052: chunk041_group000_sub000.008
+    4300054: chunk042_group000_sub000.013
+    4300056: chunk045_group000_sub000.010
+    4300058: chunk047_group000_sub000.012
+    4300060: chunk048_group000_sub000.010
+    4300062: chunk049_group000_sub000.010
+    4300064: chunk050_group000_sub000.012
+    4300066: chunk052_group000_sub000.012
+    4300068: chunk053_group000_sub000.012
+    4300070: chunk055_group000_sub000.012
+    4300072: chunk056_group000_sub000.012
+    4300074: chunk057_group000_sub000.010
+    4300076: chunk058_group000_sub000.014
+    4300078: chunk059_group000_sub000.009
+    4300080: chunk061_group000_sub000.013
+    4300082: chunk063_group000_sub000.013
+    4300084: chunk065_group000_sub000.013
+    4300086: chunk067_group000_sub000.012
+    4300088: chunk068_group000_sub000.014
+    4300090: chunk069_group000_sub000.013
+    4300092: chunk071_group000_sub000.012
+    4300094: chunk072_group000_sub000.013
+    4300096: chunk073_group000_sub000.012
+    4300098: chunk074_group000_sub000.011
+    4300100: chunk075_group000_sub000.012
+    4300102: chunk076_group000_sub000.011
+    4300104: chunk079_group000_sub000.013
+    4300106: chunk080_group000_sub000.012
+    4300108: chunk081_group000_sub000.012
+    4300110: chunk082_group000_sub000.015
+    4300112: chunk083_group000_sub000.013
+    4300114: chunk084_group000_sub000.014
+    4300116: chunk085_group000_sub000.014
+    4300118: chunk086_group000_sub000.016
+    4300120: chunk087_group000_sub000.014
+    4300122: chunk088_group000_sub000.015
+    4300124: chunk089_group000_sub000.015
+    4300126: chunk090_group000_sub000.017
+    4300128: chunk092_group000_sub000.018
+    4300130: chunk093_group000_sub000.017
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_000.jpg
+    second: {fileID: 2100000, guid: 781d633ec6da6d64f9912922b642327c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_001.jpg
+    second: {fileID: 2100000, guid: 5ab4f581255d8ff4090a7ed985c20bda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_005.jpg
+    second: {fileID: 2100000, guid: cd6a2bada1cb8b642af10e7b5dcaacaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_010.jpg
+    second: {fileID: 2100000, guid: 98a6f688215ec9e48849a81e67cbb330, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_011.jpg
+    second: {fileID: 2100000, guid: 2ce8e2edf9c64694dac87683cdb77992, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_012.jpg
+    second: {fileID: 2100000, guid: a32245922140bba4082dce60f61ab652, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_014.jpg
+    second: {fileID: 2100000, guid: b3bfacbcb2a54a54bb59a68d556300e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_015.jpg
+    second: {fileID: 2100000, guid: 0e7b48a5946546145aff365abf9fa4e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_016.jpg
+    second: {fileID: 2100000, guid: cafbbc242ff61e44a81bc2762c070c1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_019.jpg
+    second: {fileID: 2100000, guid: 2da472975e3a28344b15871472b48bfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_020.jpg
+    second: {fileID: 2100000, guid: 1ed05142c79cfdc46a054f6540202b82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_021.jpg
+    second: {fileID: 2100000, guid: 2c4ddef082d1a9b4e8ee4f50f88b599f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_022.jpg
+    second: {fileID: 2100000, guid: a239fe599dc941d44bf352feb9809751, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_023.jpg
+    second: {fileID: 2100000, guid: d92537f12bdfac541bc4cd96be451293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_024.jpg
+    second: {fileID: 2100000, guid: 34a972224ab99694f84ce3f1b2702f1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_025.jpg
+    second: {fileID: 2100000, guid: 64e3cb2af44afa64591536431cea2e89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_026.jpg
+    second: {fileID: 2100000, guid: 2aec28797c04a9542b52860386f27d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_028.jpg
+    second: {fileID: 2100000, guid: a3106c5e16f7ebe4686d36ef750edd33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_029.jpg
+    second: {fileID: 2100000, guid: 4efd4f6b1dc5a074c986eac30520e52a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_030.jpg
+    second: {fileID: 2100000, guid: ec90ff643e2749244b49f4c0279d095f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_031.jpg
+    second: {fileID: 2100000, guid: 675bd1152bf7c334ca09771a77ad987b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_032.jpg
+    second: {fileID: 2100000, guid: b4775d050c1352e4b90833829fc99790, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_034.jpg
+    second: {fileID: 2100000, guid: 351c982d611be964b94162af96b0f94b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_036.jpg
+    second: {fileID: 2100000, guid: e9f81e6d87c2f0d42befa6f5a30cd185, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_037.jpg
+    second: {fileID: 2100000, guid: b618e9e100edc5c4b98428688705f207, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_038.jpg
+    second: {fileID: 2100000, guid: d45647a678709874d8bf3c429ddaf70b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_040.jpg
+    second: {fileID: 2100000, guid: 43a36e442868f2d42a2e80eeaffecef9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_041.jpg
+    second: {fileID: 2100000, guid: a5adf8d9b210515418ebf7a5684ac3f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_044.jpg
+    second: {fileID: 2100000, guid: bc86dcf1555d84a4d94430ae6def916d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_045.jpg
+    second: {fileID: 2100000, guid: 9cf3123c0e7e6bc44a5ffba3e7c97190, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_046.jpg
+    second: {fileID: 2100000, guid: 063ab8340efcb1a48adba537ad10063a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_047.jpg
+    second: {fileID: 2100000, guid: 71888373bb2c208438311d710ac469de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_048.jpg
+    second: {fileID: 2100000, guid: 74752ebf37046bb4eb98840aee5ef5a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_050.jpg
+    second: {fileID: 2100000, guid: 7798e3185567f7d42b5d22e3337a36d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_051.jpg
+    second: {fileID: 2100000, guid: bd69ef67d70ecf54aa9d5ffedf5a61c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_053.jpg
+    second: {fileID: 2100000, guid: dc28698fc0534164a9ad4d4f1fd6cb56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_054.jpg
+    second: {fileID: 2100000, guid: 0e12db69c9bb8e5438af606263047f0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_055.jpg
+    second: {fileID: 2100000, guid: 0680c87b40a02e24bb23bee23eec5f92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_056.jpg
+    second: {fileID: 2100000, guid: 5b0a6966e377fc64fac9f2a98cc2e7f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_057.jpg
+    second: {fileID: 2100000, guid: b959ef8f387e72c4e92cd1e48eb78b61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_059.jpg
+    second: {fileID: 2100000, guid: 7f98fdea19dac91428595310892ea358, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_061.jpg
+    second: {fileID: 2100000, guid: 999e43a1a63d6704582836afc61eb23d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_063.jpg
+    second: {fileID: 2100000, guid: 780c4c4bd1bb57846b58e60f41f6a683, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_065.jpg
+    second: {fileID: 2100000, guid: f0a33ff9deda1d141b913aa5fc46a1c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_066.jpg
+    second: {fileID: 2100000, guid: b8118fad8feadf44d9a047c9961ee967, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_067.jpg
+    second: {fileID: 2100000, guid: 4932b2313d356124eb07f896411a357d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_069.jpg
+    second: {fileID: 2100000, guid: 49a9c806b52c7844492a9afe45d1dd6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_070.jpg
+    second: {fileID: 2100000, guid: 123c1e3724f32544780467d7a8cb74ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_071.jpg
+    second: {fileID: 2100000, guid: d8a11429da59fad44a96c9fdf27f9776, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_072.jpg
+    second: {fileID: 2100000, guid: c382b818d2f4b044dba0cd7bbc2c79eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_073.jpg
+    second: {fileID: 2100000, guid: 96884589c4414d844b2efd3a6919142d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_074.jpg
+    second: {fileID: 2100000, guid: ed6a1da3562778a40984cff58a0b381d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_076.jpg
+    second: {fileID: 2100000, guid: 15092cfa6ccab8e4587235a47a56345a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_077.jpg
+    second: {fileID: 2100000, guid: 7fbc0f35fe2505e4b8a4e7ad0f6b83ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_078.jpg
+    second: {fileID: 2100000, guid: 3500809478d3b1847b1cd3c998d0a797, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_079.jpg
+    second: {fileID: 2100000, guid: 3e4e316742d80b44b976d3ff88863037, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_080.jpg
+    second: {fileID: 2100000, guid: 53c44ca81b5761140b77c05299a37ef6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_081.jpg
+    second: {fileID: 2100000, guid: 106415bdda02a6f49a10c2e6842d19e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_082.jpg
+    second: {fileID: 2100000, guid: 8f49322e4aa184b41b97ac39f36d0a13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_083.jpg
+    second: {fileID: 2100000, guid: 7862c070a764fd448b18223f429a2475, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_084.jpg
+    second: {fileID: 2100000, guid: 43ef56310fac286499505ff770b4aef7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_085.jpg
+    second: {fileID: 2100000, guid: 416635b5ef886724795a5fc1a8e8ef81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_086.jpg
+    second: {fileID: 2100000, guid: 9692e26597b162944b912b302a4cc4d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_087.jpg
+    second: {fileID: 2100000, guid: e13811b44bb5bda49be7bfabf5c01c98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_088.jpg
+    second: {fileID: 2100000, guid: 0749847e79147f74ab1d28fca02ea63c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 41a8012778ff4fc1800a7794bd15d81e_089.jpg
+    second: {fileID: 2100000, guid: 0b5faee3f7313694b8c86da3d84f493f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
