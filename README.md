@@ -42,7 +42,7 @@ Google Drive:
 ## Acknowledgement
 This [git repository](https://github.com/pierlui92/Shooting-Labels) was used as the ground foundation of our project
 
-## Authours
+## Authors
 Cyprien Fol, Yuchang Jiang, Tianyu Wu, Yiming Zhao
 
 
