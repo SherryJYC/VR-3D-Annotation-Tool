@@ -11,6 +11,8 @@ VR (Virtual Realiy) application. Two labeling modes are provided in our applicat
 3. User-Static mode:  <br/> 
   user can label objects while sitting comfortably on a chair.
 
+[[Project Wiki](https://github.com/SherryJYC/VR-3D-Annotation-Tool/wiki)] &nbsp; [[Project Report]()] &nbsp; [[Project Demo]()]
+
 # Demo
 > insert video later
 
@@ -36,25 +38,6 @@ Google Drive:
 - Put the folders **RGBMeshes** and **EmptyMeshes** with the files **RGBMEshes.meta** and **EmptyMeshes.meta** into the folder VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs
 - Open unity and the scene TestRoom2d3ds
 - Click on the GameObject Meshe and update Meshe RGB and Meshe Empty accordingly with the Prefab in VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs\RGBMeshes and VR-3D-Annotation-Tool\unity\Assets\Resources\Prefabs\EmptyMeshes  
-
-# 2 Labeling Modes
-
-## User-Dynamic Labeling
--  Controller guidance
-
-Left controller            |          Right controller   
-:-------------------------:|:-------------------------:
-<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-left.png" alt="drawing" height="300" width="550"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-right.png" alt="drawing" height="300" width="550"/> 
-
-## User-Static Labeling 
--  Controller guidance
-
-Left controller            |          Right controller   
-:-------------------------:|:-------------------------:
-<img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-static_left.png" alt="drawing" height="300" width="550"/>  | <img src="https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/main/misc/controller_guide-static_right.png" alt="drawing" height="300" width="550"/> 
-
-> for a user study to compare these two versions, please check out [link to user study report (NOT YET)]()
-
 
 ## Acknowledgement
 This [git repository](https://github.com/pierlui92/Shooting-Labels) was used as the ground foundation of our project
