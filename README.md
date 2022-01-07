@@ -14,7 +14,7 @@ VR (Virtual Realiy) application. Two labeling modes are provided in our applicat
 [[Project Wiki](https://github.com/SherryJYC/VR-3D-Annotation-Tool/wiki)] &nbsp; [[Project Report]()] &nbsp; [[Project Demo](https://youtu.be/IcSVtSzY36U)]
 
 # Demo
-> insert video later
+https://youtu.be/IcSVtSzY36U
 
 # Requirement 
 Hardwares:
