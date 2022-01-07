@@ -14,8 +14,7 @@ VR (Virtual Realiy) application. Two labeling modes are provided in our applicat
 [[Project Wiki](https://github.com/SherryJYC/VR-3D-Annotation-Tool/wiki)] &nbsp; [[Project Report]()] &nbsp; [[Project Demo](https://youtu.be/IcSVtSzY36U)]
 
 # Demo
-https://youtu.be/IcSVtSzY36U
-
+[![Tutorial video](https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/6f1531ad4af47c78082b530dcbed9e7f8dbc49b3/tutorial_video.png)](https://youtu.be/IcSVtSzY36U "TUTORIAL")
 # Requirement 
 Hardwares:
 - HTC Vive Pro
