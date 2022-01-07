@@ -1,4 +1,4 @@
-# VR-3D-Annotation-Tool
+# SemSpray: VR Annotation Tool for 3D Scene
 
 > This is the project for Mixed Reality Lab @ ETH Zurich 2021, aiming to develop a 3D labelling tool supprted by VR device. 
 
