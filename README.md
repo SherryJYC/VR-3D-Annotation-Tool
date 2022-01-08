@@ -11,7 +11,7 @@ VR (Virtual Realiy) application. Two labeling modes are provided in our applicat
 3. User-Static mode:  <br/> 
   user can label objects while sitting comfortably on a chair.
 
-[[Project Wiki](https://github.com/SherryJYC/VR-3D-Annotation-Tool/wiki)] &nbsp; [[Project Report]()] &nbsp; [[Project Demo](https://youtu.be/IcSVtSzY36U)]
+[[Project Wiki](https://github.com/SherryJYC/VR-3D-Annotation-Tool/wiki)] &nbsp; [[Project Report](https://drive.google.com/file/d/1HGLhXTyjPzEscT4YDCAK9k9ESTzzcMuW/view?usp=sharing)] &nbsp; [[Project Demo](https://youtu.be/IcSVtSzY36U)]
 
 # Demo
 [![Tutorial video](https://github.com/SherryJYC/VR-3D-Annotation-Tool/blob/6f1531ad4af47c78082b530dcbed9e7f8dbc49b3/tutorial_video.png)](https://youtu.be/IcSVtSzY36U "TUTORIAL")
